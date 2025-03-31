@@ -8,6 +8,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.SoulLand;
+import net.robert.soulland.block.ModBlocks;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -17,8 +18,11 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SHEN_SILVER_INGOT.get()))
                     .title(Component.translatable("creativetab.soulland_tab"))
                     .displayItems(((itemDisplayParameters, output) -> {
+
                         output.accept(ModItems.SHEN_SILVER_INGOT.get());
                         output.accept(ModItems.RAW_SHEN_SILVER_INGOT.get());
+
+                        output.accept(ModBlocks.SHEN_SILVER_BLOCK.get());
                     }))
                     .build());
 

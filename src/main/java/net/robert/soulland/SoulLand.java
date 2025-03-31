@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
 import org.slf4j.Logger;
@@ -34,8 +35,9 @@ public class SoulLand {
         // Register Mod creative mode tabs
         ModCreativeModeTabs.register(modEventBus);
 
-        // Register Mod Items
+        // Register Mod Items / Blocks
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -52,10 +54,6 @@ public class SoulLand {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(ModItems.SHEN_SILVER_INGOT);
-//            event.accept(ModItems.RAW_SHEN_SILVER_INGOT);
-//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
