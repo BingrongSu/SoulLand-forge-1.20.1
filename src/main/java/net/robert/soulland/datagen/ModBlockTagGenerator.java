@@ -18,10 +18,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get())
+                .add(ModBlocks.NETHER_SHEN_SILVER_ORE.get())
+                .add(ModBlocks.SHEN_SILVER_ORE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.SHEN_SILVER_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.SHEN_SILVER_BLOCK.get());
+                .add(ModBlocks.SHEN_SILVER_BLOCK.get())
+                .add(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get())
+                .add(ModBlocks.NETHER_SHEN_SILVER_ORE.get())
+                .add(ModBlocks.SHEN_SILVER_ORE.get());
     }
 }

@@ -1,3 +1,4 @@
-// 1.20.1	2025-03-31T21:28:30.0628052	Tags for minecraft:block mod id soulland
-b86843d4c4291b93712a31b1895fd5648ce315b0 data/minecraft/tags/blocks/mineable/pickaxe.json
+// 1.20.1	2025-03-31T22:27:09.5629354	Tags for minecraft:block mod id soulland
+54bdc791ef54f51894702b0f139f198b14c85715 data/minecraft/tags/blocks/mineable/pickaxe.json
 b86843d4c4291b93712a31b1895fd5648ce315b0 data/minecraft/tags/blocks/needs_diamond_tool.json
+03028888a3f9f2c2003ab81f0d82d15103e06808 data/minecraft/tags/blocks/needs_iron_tool.json

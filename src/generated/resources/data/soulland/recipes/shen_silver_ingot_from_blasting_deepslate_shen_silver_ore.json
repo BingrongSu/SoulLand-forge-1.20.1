@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.2,
+  "group": "shen_silver",
+  "ingredient": {
+    "item": "soulland:deepslate_shen_silver_ore"
+  },
+  "result": "soulland:shen_silver_ingot"
+}

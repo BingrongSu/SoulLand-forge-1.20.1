@@ -1,4 +1,13 @@
-// 1.20.1	2025-03-31T21:28:30.0608047	Block States: soulland
+// 1.20.1	2025-03-31T22:27:09.5629354	Block States: soulland
+ca92c6515894159cdd451496d00185d6ac31125c assets/soulland/blockstates/deepslate_shen_silver_ore.json
+a2a07192e9f1a78dff90a72e0e1752ff139a0eb9 assets/soulland/blockstates/nether_shen_silver_ore.json
 6cd59a55be136a0efcfd4c314466c9372f8c8d7f assets/soulland/blockstates/shen_silver_block.json
+a156feaf1765b7f90223e8b1e24d2e175ef8ff82 assets/soulland/blockstates/shen_silver_ore.json
+460e307c23ada9625037daa1bd92e76b7aaf8037 assets/soulland/models/block/deepslate_shen_silver_ore.json
+bebc1787f2901571be4567c0a40c56712e82f98a assets/soulland/models/block/nether_shen_silver_ore.json
 7972c80101717991c0127f53a4218291e96e6ea9 assets/soulland/models/block/shen_silver_block.json
+894bfa83d98887292ed2a388cdc34d89a4503714 assets/soulland/models/block/shen_silver_ore.json
+ff2d1ede441709ca41aa5b067c2f55cfd39835dd assets/soulland/models/item/deepslate_shen_silver_ore.json
+1b66ef50b9f3c1bbb2eaa980eb9a815cbf89d223 assets/soulland/models/item/nether_shen_silver_ore.json
 248ec5c3c14b1bd8eebe76ae1c0b0583897f51e1 assets/soulland/models/item/shen_silver_block.json
+f78fb4bb0f9a3892514350d83ad3ccc9a988bc32 assets/soulland/models/item/shen_silver_ore.json

@@ -1,2 +1,5 @@
-// 1.20.1	2025-03-31T21:28:30.059805	Loot Tables
+// 1.20.1	2025-03-31T22:27:09.5629354	Loot Tables
+ce9f4a1ee2fc1409f94371f05751b31a41391b94 data/soulland/loot_tables/blocks/deepslate_shen_silver_ore.json
+edc377e09aced034b8e534119a47d6d2bc34adc4 data/soulland/loot_tables/blocks/nether_shen_silver_ore.json
 89984364cc647743e0e58a1dee963b4851cdf416 data/soulland/loot_tables/blocks/shen_silver_block.json
+6d623772b9cee63acb6f9f4d1098c9766af4e899 data/soulland/loot_tables/blocks/shen_silver_ore.json

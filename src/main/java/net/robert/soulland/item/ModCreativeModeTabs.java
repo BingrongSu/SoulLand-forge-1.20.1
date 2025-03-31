@@ -20,9 +20,13 @@ public class ModCreativeModeTabs {
                     .displayItems(((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.SHEN_SILVER_INGOT.get());
+                        output.accept(ModItems.SHEN_SILVER_NUGGET.get());
                         output.accept(ModItems.RAW_SHEN_SILVER_INGOT.get());
 
                         output.accept(ModBlocks.SHEN_SILVER_BLOCK.get());
+                        output.accept(ModBlocks.SHEN_SILVER_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get());
+                        output.accept(ModBlocks.NETHER_SHEN_SILVER_ORE.get());
                     }))
                     .build());
 

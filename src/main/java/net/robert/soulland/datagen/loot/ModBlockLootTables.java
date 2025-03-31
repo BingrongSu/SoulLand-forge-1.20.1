@@ -12,6 +12,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.block.ModBlocks;
+import net.robert.soulland.item.ModItems;
 
 import java.util.Set;
 
@@ -23,6 +24,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.SHEN_SILVER_BLOCK.get());
+
+        createUniformOreDrops(ModBlocks.SHEN_SILVER_ORE.get(), ModItems.RAW_SHEN_SILVER_INGOT.get(), 1, 1);
+        createUniformOreDrops(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get(), ModItems.RAW_SHEN_SILVER_INGOT.get(), 1, 1);
+        createUniformOreDrops(ModBlocks.NETHER_SHEN_SILVER_ORE.get(), ModItems.SHEN_SILVER_NUGGET.get(), 4, 9);
+
     }
 
     @Override
@@ -30,11 +36,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
-    protected LootTable.Builder createUniformOreDrops(Block pBlock, Item item, float pMin, float pMax) {
-        return createSilkTouchDispatchTable(pBlock,
+    private void createUniformOreDrops(Block pBlock, Item item, float pMin, float pMax) {
+        this.add(pBlock, block -> createSilkTouchDispatchTable(pBlock,
                 this.applyExplosionDecay(pBlock,
                         LootItem.lootTableItem(item)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(pMin, pMax)))
-                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))));
     }
 }

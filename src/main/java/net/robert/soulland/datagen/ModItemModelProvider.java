@@ -18,6 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.RAW_SHEN_SILVER_INGOT);
+        simpleItem(ModItems.SHEN_SILVER_NUGGET);
         simpleItem(ModItems.SHEN_SILVER_INGOT);
     }
 

@@ -2,6 +2,7 @@ package net.robert.soulland.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -11,7 +12,6 @@ import net.robert.soulland.SoulLand;
 import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.item.ModItems;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -22,13 +22,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-        oreSmelting(consumer, List.of(ModItems.RAW_SHEN_SILVER_INGOT.get()),
-                RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get(), 0.2f, 300, "shen_silver");
-        oreBlasting(consumer, List.of(ModItems.RAW_SHEN_SILVER_INGOT.get()),
-                RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get(), 0.2f, 150, "shen_silver");
+        oreSmeltingBlasting(consumer, List.of(
+                    ModBlocks.SHEN_SILVER_ORE.get(),
+                    ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get(),
+                    ModBlocks.NETHER_SHEN_SILVER_ORE.get(),
+                    ModItems.RAW_SHEN_SILVER_INGOT.get()
+                ), ModItems.SHEN_SILVER_INGOT.get(), 0.2f, 300, "shen_silver"
+        );
 
-        reversePackingRecipe9(consumer, RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get(), RecipeCategory.MISC, ModBlocks.SHEN_SILVER_BLOCK.get());
+        reversePackingRecipe9(consumer, RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHEN_SILVER_BLOCK.get());
+        reversePackingRecipe9(consumer, RecipeCategory.MISC, ModItems.SHEN_SILVER_NUGGET.get(), RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get());
     }
+
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
@@ -55,10 +60,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("...")
                 .define('.', pUnpacked)
                 .unlockedBy(getHasName(pUnpacked), has(pUnpacked))
-                .save(consumer);
+                .save(consumer, new ResourceLocation(SoulLand.MOD_ID, "%s_from_%s".formatted(getSimpleRecipeName(pPacked), getSimpleRecipeName(pUnpacked))));
         ShapelessRecipeBuilder.shapeless(pUnpackedCategory, pUnpacked, 9)
                 .requires(pPacked)
                 .unlockedBy(getHasName(pPacked), has(pPacked))
-                .save(consumer);
+                .save(consumer, new ResourceLocation(SoulLand.MOD_ID, "%s_from_%s".formatted(getSimpleRecipeName(pUnpacked), getSimpleRecipeName(pPacked))));
+    }
+
+    private static void oreSmeltingBlasting(Consumer<FinishedRecipe> consumer, List<ItemLike> ores, ItemLike result, float pExperience, int basicCookingTime, String pGroup) {
+        oreSmelting(consumer, ores,
+                RecipeCategory.MISC, result, pExperience, basicCookingTime, pGroup);
+        oreBlasting(consumer, ores,
+                RecipeCategory.MISC, result, pExperience, basicCookingTime/2, pGroup);
     }
 }

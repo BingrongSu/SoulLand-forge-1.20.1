@@ -13,6 +13,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHEN_SILVER_INGOT = ITEMS.register("shen_silver_ingot",
             () -> new Item(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> SHEN_SILVER_NUGGET = ITEMS.register("shen_silver_nugget",
+            () -> new Item(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> RAW_SHEN_SILVER_INGOT = ITEMS.register("raw_shen_silver_ingot",
             () -> new Item(new Item.Properties()));
 
