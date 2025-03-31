@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "...",
+    "...",
+    "..."
+  ],
+  "key": {
+    ".": {
+      "item": "soulland:shen_silver_ingot"
+    }
+  },
+  "result": {
+    "item": "soulland:shen_silver_block"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "shen_silver",
+  "ingredient": {
+    "item": "soulland:raw_shen_silver_ingot"
+  },
+  "result": "soulland:shen_silver_ingot"
+}
