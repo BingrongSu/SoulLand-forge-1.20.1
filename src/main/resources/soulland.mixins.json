@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.robert.soulland.mixin",
+  "refmap": "mixins.soulland.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "PlayerRendererMixin"
+  ],
+  "server": []
+}
