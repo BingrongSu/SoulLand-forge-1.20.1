@@ -19,7 +19,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, SoulLand.MOD_ID);
 
     public static final RegistryObject<Block> SHEN_SILVER_BLOCK = registerBlock("shen_silver_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).strength(6f, 6.5f)));
     public static final RegistryObject<Block> SHEN_SILVER_ORE = registerBlock("shen_silver_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)));
     public static final RegistryObject<Block> DEEPSLATE_SHEN_SILVER_ORE = registerBlock("deepslate_shen_silver_ore",
