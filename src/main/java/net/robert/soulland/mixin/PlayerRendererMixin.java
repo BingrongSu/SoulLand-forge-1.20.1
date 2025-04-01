@@ -23,9 +23,9 @@ public class PlayerRendererMixin {
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         matrixStack.pushPose();
         matrixStack.translate(1, 1, 0);
-        matrixStack.scale(5, 5, 5);
-        itemRenderer.renderStatic(pEntity, new ItemStack(ModItems.SHEN_SILVER_INGOT.get()), ItemDisplayContext.HEAD, false, matrixStack,
-                pBuffer, Minecraft.getInstance().level, pPackedLight, OverlayTexture.NO_OVERLAY, 0);
+//        matrixStack.scale(5, 5, 5);
+//        itemRenderer.renderStatic(pEntity, new ItemStack(ModItems.SHEN_SILVER_INGOT.get()), ItemDisplayContext.HEAD, false, matrixStack,
+//                pBuffer, Minecraft.getInstance().level, pPackedLight, OverlayTexture.NO_OVERLAY, 0);
         matrixStack.popPose();
     }
 
