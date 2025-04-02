@@ -21,6 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SHEN_SILVER_NUGGET);
         simpleItem(ModItems.SHEN_SILVER_INGOT);
         simpleItem(ModItems.INCREASE_SOUL_POWER_PILL_LV1);
+        simpleItem(ModItems.AL_FURNACE_FUEL_LV1);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -29,6 +29,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         createUniformOreDrops(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get(), ModItems.RAW_SHEN_SILVER_INGOT.get(), 1, 1);
         createUniformOreDrops(ModBlocks.NETHER_SHEN_SILVER_ORE.get(), ModItems.SHEN_SILVER_NUGGET.get(), 4, 9);
 
+        this.dropSelf(ModBlocks.ALCHEMY_FURNACE.get());
     }
 
     @Override

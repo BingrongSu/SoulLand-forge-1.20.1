@@ -14,6 +14,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.soulland.block.ModBlocks;
+import net.robert.soulland.block.entity.ModBlockEntities;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
 import org.slf4j.Logger;
@@ -38,6 +39,8 @@ public class SoulLand {
         // Register Mod Items / Blocks
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.SoulLand;
+import net.robert.soulland.block.custom.AlchemyFurnaceBlock;
 import net.robert.soulland.item.ModItems;
 
 import java.util.function.Supplier;
@@ -26,6 +27,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
     public static final RegistryObject<Block> NETHER_SHEN_SILVER_ORE = registerBlock("nether_shen_silver_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_GOLD_ORE)));
+
+    public static final RegistryObject<Block> ALCHEMY_FURNACE = registerBlock("alchemy_furnace",
+            () -> new AlchemyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
