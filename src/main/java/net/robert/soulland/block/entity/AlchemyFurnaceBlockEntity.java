@@ -22,6 +22,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.robert.soulland.item.ModItems;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
+import net.robert.soulland.screen.AlchemyFurnaceMenu;
 import net.robert.soulland.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -111,8 +112,8 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
     }
 
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return ;
+    public @Nullable AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+        return new AlchemyFurnaceMenu(id, inventory, this, this.data);
     }
 
     @Override

@@ -28,6 +28,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SHEN_SILVER_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get());
                         output.accept(ModBlocks.NETHER_SHEN_SILVER_ORE.get());
+
+                        output.accept(ModBlocks.ALCHEMY_FURNACE.get());
                     }))
                     .build());
 
