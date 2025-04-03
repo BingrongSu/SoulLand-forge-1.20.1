@@ -102,7 +102,6 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-        assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
@@ -136,7 +135,8 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
     }
 
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
-        if (hasRecipe() && hasFuel()) {
+        boolean hasRecipe = hasRecipe(), hasFuel = hasFuel(pLevel, pPos, pState);
+        if (hasRecipe && hasFuel) {
             increaseCraftingProgress();
             setChanged(pLevel, pPos, pState);
 
@@ -148,6 +148,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
             resetProgress();
         }
         decreaseFuel();
+        System.out.printf("Has Recipe: %b.\tHas Fuel: %b\n", hasRecipe, hasFuel);
     }
 
     private void decreaseFuel() {
@@ -167,7 +168,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.SHEN_SILVER_NUGGET.get(), 1);
+        ItemStack result = new ItemStack(ModItems.SHEN_SILVER_INGOT.get(), 1);
         this.itemHandler.extractItem(INPUT_SLOT_1, 1, false);
         this.itemHandler.extractItem(INPUT_SLOT_2, 1, false);
         this.itemHandler.extractItem(INPUT_SLOT_3, 1, false);
@@ -176,8 +177,8 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
 
-    private boolean hasFuel() {
-        ItemStack fuelStack = this.itemHandler.getStackInSlot(OUTPUT_SLOT);
+    private boolean hasFuel(Level pLevel, BlockPos pPos, BlockState pState) {
+        ItemStack fuelStack = this.itemHandler.getStackInSlot(FUEL_SLOT);
         if (fuelLeft > 0) {
             return true;
         } else {
@@ -185,6 +186,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
                 return false;
             } else {
                 decreaseFuelInSlot(fuelStack);
+                setChanged(pLevel, pPos, pState);
                 return true;
             }
         }
@@ -197,8 +199,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(PILL_RECIPE_SLOT).getItem() == ModItems.AL_FURNACE_FUEL_LV1.get()
-                && this.itemHandler.getStackInSlot(INPUT_SLOT_1).getItem() == ModItems.SHEN_SILVER_NUGGET.get()
+        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT_1).getItem() == ModItems.SHEN_SILVER_NUGGET.get()
                 && this.itemHandler.getStackInSlot(INPUT_SLOT_2).getItem() == ModItems.SHEN_SILVER_NUGGET.get()
                 && this.itemHandler.getStackInSlot(INPUT_SLOT_3).getItem() == ModItems.SHEN_SILVER_NUGGET.get();
         ItemStack result = new ItemStack(ModItems.SHEN_SILVER_INGOT.get());

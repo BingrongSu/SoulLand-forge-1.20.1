@@ -20,6 +20,7 @@ import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
 import net.robert.soulland.screen.AlchemyFurnaceScreen;
 import net.robert.soulland.screen.ModMenuTypes;
+import net.robert.soulland.util.ModTags;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -46,6 +47,7 @@ public class SoulLand {
         ModBlockEntities.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

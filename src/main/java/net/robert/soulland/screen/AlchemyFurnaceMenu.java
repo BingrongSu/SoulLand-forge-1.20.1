@@ -32,7 +32,7 @@ public class AlchemyFurnaceMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 104, 39));     // pill recipe
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 86, 22));     // pill recipe
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 34, 6));      // input 1
             this.addSlot(new SlotItemHandler(iItemHandler, 2, 21, 26));     // input 2
             this.addSlot(new SlotItemHandler(iItemHandler, 3, 46, 26));     // input 3

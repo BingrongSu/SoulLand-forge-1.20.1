@@ -20,7 +20,7 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
     @Override
     protected void init() {
         super.init();
-        this.titleLabelX = 121;
+        this.titleLabelX = 70;
         this.titleLabelY = 5;
         this.inventoryLabelX = 110;
         this.inventoryLabelY = 71;
@@ -38,6 +38,7 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
 
         renderProgressArrow(guiGraphics, x, y);
         renderFireIcon(guiGraphics, x, y);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
