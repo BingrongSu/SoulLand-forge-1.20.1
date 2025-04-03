@@ -22,8 +22,8 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
         super.init();
         this.titleLabelX = 70;
         this.titleLabelY = 5;
-        this.inventoryLabelX = 110;
-        this.inventoryLabelY = 71;
+        this.inventoryLabelX = 120;
+        this.inventoryLabelY = 73;
     }
 
     @Override
@@ -49,7 +49,8 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
 
     private void renderFireIcon(GuiGraphics guiGraphics, int x, int y) {
         if(menu.hasFire()) {
-            guiGraphics.blit(TEXTURE, x + 34, y + 45, 176, 0, 14, menu.getScaledFire());
+            int fireHeight = menu.getScaledFire();
+            guiGraphics.blit(TEXTURE, x + 34, y + 45 + (14-fireHeight), 176, 14-fireHeight, 14, fireHeight);
         }
     }
 

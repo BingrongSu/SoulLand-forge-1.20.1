@@ -182,7 +182,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
         if (fuelLeft > 0) {
             return true;
         } else {
-            if (fuelStack.isEmpty() || !(fuelStack.is(ModTags.Items.AL_FURNACE_FUEL))) {
+            if (fuelStack.isEmpty() || !(fuelStack.is(ModTags.Items.AL_FURNACE_FUEL)) || !hasRecipe()) {
                 return false;
             } else {
                 decreaseFuelInSlot(fuelStack);

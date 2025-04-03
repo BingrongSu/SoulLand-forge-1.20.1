@@ -23,7 +23,7 @@ public class AlchemyFurnaceMenu extends AbstractContainerMenu {
 
     public AlchemyFurnaceMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.ALCHEMY_FURNACE_MENU.get(), pContainerId);
-        checkContainerSize(inv, 4);
+        checkContainerSize(inv, 6);
         blockEntity = ((AlchemyFurnaceBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
