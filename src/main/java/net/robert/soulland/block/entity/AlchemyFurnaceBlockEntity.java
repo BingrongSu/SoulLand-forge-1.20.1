@@ -148,7 +148,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
             resetProgress();
         }
         decreaseFuel();
-        System.out.printf("Has Recipe: %b.\tHas Fuel: %b\n", hasRecipe, hasFuel);
+//        System.out.printf("Has Recipe: %b.\tHas Fuel: %b\n", hasRecipe, hasFuel);
     }
 
     private void decreaseFuel() {
