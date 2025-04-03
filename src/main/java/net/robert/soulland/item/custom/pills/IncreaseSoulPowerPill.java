@@ -1,4 +1,4 @@
-package net.robert.soulland.item.custom;
+package net.robert.soulland.item.custom.pills;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -6,11 +6,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class IncreaseSoulPowerPill extends Item {
+public class IncreaseSoulPowerPill extends AbstractPillItem {
     public final Double amount;
 
-    public IncreaseSoulPowerPill(Properties pProperties, double amount) {
-        super(pProperties);
+    public IncreaseSoulPowerPill(Properties pProperties, double amount, int level) {
+        super(pProperties, level);
         this.amount = amount;
     }
 

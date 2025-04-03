@@ -26,6 +26,7 @@ import net.robert.soulland.block.entity.ModBlockEntities;
 import net.robert.soulland.event.ModMiscEvents;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
+import net.robert.soulland.recipe.ModRecipes;
 import net.robert.soulland.screen.AlchemyFurnaceScreen;
 import net.robert.soulland.screen.ModMenuTypes;
 import net.robert.soulland.util.ModTags;
@@ -58,6 +59,7 @@ public class SoulLand {
 
         ModMenuTypes.register(modEventBus);
 
+        ModRecipes.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

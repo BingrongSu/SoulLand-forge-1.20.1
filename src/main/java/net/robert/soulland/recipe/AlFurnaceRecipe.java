@@ -36,8 +36,7 @@ public class AlFurnaceRecipe implements Recipe<SimpleContainer> {
         return inputItems.get(0).test(simpleContainer.getItem(0))
                 && inputItems.get(1).test(simpleContainer.getItem(1))
                 && inputItems.get(2).test(simpleContainer.getItem(2))
-                && inputItems.get(3).test(simpleContainer.getItem(3))
-                && inputItems.get(4).test(simpleContainer.getItem(4));
+                && inputItems.get(3).test(simpleContainer.getItem(3));
     }
 
     @Override

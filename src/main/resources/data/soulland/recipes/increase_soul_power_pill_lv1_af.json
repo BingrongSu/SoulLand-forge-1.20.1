@@ -1,0 +1,22 @@
+{
+  "type": "soulland:alchemy_furnace",
+  "ingredients": [
+    {
+      "item": "soulland:shen_silver_ingot",
+      "count": 3
+    },
+    {
+      "item": "soulland:shen_silver_nugget"
+    },
+    {
+      "item": "soulland:shen_silver_nugget"
+    },
+    {
+      "item": "soulland:shen_silver_nugget"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "soulland:increase_soul_power_pill_lv1"
+  }
+}
