@@ -29,7 +29,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHER_GOLD_ORE)));
 
     public static final RegistryObject<Block> ALCHEMY_FURNACE = registerBlock("alchemy_furnace",
-            () -> new AlchemyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.FURNACE).noOcclusion()));
+            () -> new AlchemyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

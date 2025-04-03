@@ -20,8 +20,10 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
     @Override
     protected void init() {
         super.init();
-        this.titleLabelY = 100000;
-        this.inventoryLabelY = 100000;
+        this.titleLabelX = 121;
+        this.titleLabelY = 5;
+        this.inventoryLabelX = 110;
+        this.inventoryLabelY = 71;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NETHER_SHEN_SILVER_ORE);
         blockWithItem(ModBlocks.SHEN_SILVER_ORE);
 
-        simpleBlock(ModBlocks.ALCHEMY_FURNACE.get(),
+        simpleBlockWithItem(ModBlocks.ALCHEMY_FURNACE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/alchemy_furnace")));
     }
 
