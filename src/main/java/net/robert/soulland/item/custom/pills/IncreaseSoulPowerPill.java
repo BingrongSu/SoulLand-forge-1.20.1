@@ -16,9 +16,11 @@ public class IncreaseSoulPowerPill extends AbstractPillItem {
 
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull LivingEntity pLivingEntity) {
-        // append the increase soul power lines here ~~~~~~~~~~~~
-        System.out.printf("~~~~~~~~~~ Soul Power Increased by %.2f.%n", this.amount);
-        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        if (!pLevel.isClientSide()) {
+            // append the increase soul power lines here ~~~~~~~~~~~~
+            System.out.printf("~~~~~~~~~~ Soul Power Increased by %.2f.%n", this.amount);
+            // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
 }

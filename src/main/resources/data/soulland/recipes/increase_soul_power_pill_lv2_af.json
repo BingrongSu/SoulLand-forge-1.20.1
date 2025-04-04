@@ -1,0 +1,21 @@
+{
+  "type": "soulland:alchemy_furnace",
+  "ingredients": [
+    {
+      "item": "soulland:increase_soul_power_pill_recipe_lv2"
+    },
+    {
+      "item": "soulland:plant_04"
+    },
+    {
+      "item": "soulland:plant_04"
+    },
+    {
+      "item": "soulland:plant_05"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "soulland:increase_soul_power_pill_lv2"
+  }
+}

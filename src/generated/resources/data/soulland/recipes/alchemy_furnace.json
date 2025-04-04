@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "+": {
+      "item": "minecraft:copper_block"
+    },
+    "-": {
+      "item": "minecraft:furnace"
+    },
+    ".": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "...",
+    ".-.",
+    "+++"
+  ],
+  "result": {
+    "item": "soulland:alchemy_furnace"
+  },
+  "show_notification": true
+}

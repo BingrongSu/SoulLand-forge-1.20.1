@@ -4,13 +4,25 @@
   "item.soulland.raw_shen_silver_ingot": "Raw Shen Silver Ingot",
 
   "item.soulland.increase_soul_power_pill_lv1": "Increase Soul Power Pill Level 1",
+  "item.soulland.increase_soul_power_pill_lv2": "Increase Soul Power Pill Level 2",
+
+  "item.soulland.increase_soul_power_pill_recipe_lv1": "Increase Soul Power Pill Recipe Level 1",
+  "item.soulland.increase_soul_power_pill_recipe_lv2": "Increase Soul Power Pill Recipe Level 2",
+
+  "item.soulland.plant_01": "Plant 01",
+  "item.soulland.plant_02": "Plant 02",
+  "item.soulland.plant_03": "Plant 03",
+  "item.soulland.plant_04": "Plant 04",
+  "item.soulland.plant_05": "Plant 05",
+
+  "item.soulland.al_furnace_fuel_lv1": "Alchemy Furnace Fuel Lv1",
 
   "block.soulland.shen_silver_block": "Shen Silver Block",
   "block.soulland.shen_silver_ore": "Shen Silver Ore",
   "block.soulland.deepslate_shen_silver_ore": "Deepslate Shen Silver Ore",
   "block.soulland.alchemy_furnace": "Alchemy Furnace",
 
-  "title.soulland.alchemy_furnace": "Alchemy\nFurnace",
+  "title.soulland.alchemy_furnace": "Alchemy Furnace",
 
   "creativetab.soulland_tab": "Soul Land"
 }

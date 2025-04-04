@@ -14,6 +14,8 @@ import net.minecraft.world.level.Level;
 import net.robert.soulland.SoulLand;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlFurnaceRecipe implements Recipe<SimpleContainer> {
 
@@ -32,11 +34,28 @@ public class AlFurnaceRecipe implements Recipe<SimpleContainer> {
         if(level.isClientSide()) {
             return false;
         }
+        return inputItems.get(0).test(simpleContainer.getItem(0)) && inputsMatch(inputItems.subList(1, 4), simpleContainer);
+    }
 
-        return inputItems.get(0).test(simpleContainer.getItem(0))
-                && inputItems.get(1).test(simpleContainer.getItem(1))
-                && inputItems.get(2).test(simpleContainer.getItem(2))
-                && inputItems.get(3).test(simpleContainer.getItem(3));
+    private boolean inputsMatch(List<Ingredient> inputItems, SimpleContainer container) {
+        inputItems = new ArrayList<>(inputItems);
+        boolean b = true;
+        for (int i = 0; i < 3; i++) {
+            boolean fit = false;
+            for (int j = 0; j < 3-i; j++) {
+                if (inputItems.get(j).test(container.getItem(i+1))) {
+                    inputItems.remove(j);
+                    fit = true;
+                    break;
+                }
+            }
+            if (!fit) {
+                b = false;
+                break;
+            }
+        }
+        System.out.printf("\rInputs Matches: %b", b);
+        return b;
     }
 
     @Override
@@ -52,6 +71,10 @@ public class AlFurnaceRecipe implements Recipe<SimpleContainer> {
     @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
         return output.copy();
+    }
+
+    public NonNullList<Ingredient> getInputItems() {
+        return inputItems;
     }
 
     @Override

@@ -3,10 +3,12 @@ package net.robert.soulland.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.block.ModBlocks;
@@ -32,6 +34,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         reversePackingRecipe9(consumer, RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get(), RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHEN_SILVER_BLOCK.get());
         reversePackingRecipe9(consumer, RecipeCategory.MISC, ModItems.SHEN_SILVER_NUGGET.get(), RecipeCategory.MISC, ModItems.SHEN_SILVER_INGOT.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALCHEMY_FURNACE.get())
+                .pattern("...")
+                .pattern(".-.")
+                .pattern("+++")
+                .define('.', Items.COPPER_INGOT)
+                .define('-', Blocks.FURNACE)
+                .define('+', Blocks.COPPER_BLOCK)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                .save(consumer, new ResourceLocation(SoulLand.MOD_ID, getSimpleRecipeName(ModBlocks.ALCHEMY_FURNACE.get())));
     }
 
 
