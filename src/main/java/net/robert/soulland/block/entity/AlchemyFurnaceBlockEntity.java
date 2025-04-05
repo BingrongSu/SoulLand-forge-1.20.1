@@ -84,7 +84,8 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
-            return lazyItemHandler.cast();
+            if (side == null) return lazyItemHandler.cast();
+            else return LazyOptional.empty();   // Avoid Hopper interactions.
         }
 
         return super.getCapability(cap, side);
@@ -215,8 +216,6 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
         maxProgress = MathHelper.getAFMaxProgress(((AbstractPillItem) result.getItem()).getLevel());
         return canInsertItemIntoOutputSlot(result);
-        // TODO Create item tags for plant, recipe
-        // TODO Modify quick action by tags
         // TODO Add JEI compatibility
     }
 
