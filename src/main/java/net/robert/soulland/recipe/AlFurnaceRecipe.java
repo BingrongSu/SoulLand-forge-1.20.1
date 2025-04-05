@@ -54,7 +54,7 @@ public class AlFurnaceRecipe implements Recipe<SimpleContainer> {
                 break;
             }
         }
-        System.out.printf("\rInputs Matches: %b", b);
+//        System.out.printf("\rInputs Matches: %b", b);
         return b;
     }
 

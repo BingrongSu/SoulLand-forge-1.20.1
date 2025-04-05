@@ -3,7 +3,6 @@ package net.robert.soulland.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.robert.soulland.SoulLand;
@@ -22,5 +21,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ModTags.Items.AL_FURNACE_FUEL)
                 .add(ModItems.AL_FURNACE_FUEL_LV1.get());
+        this.tag(ModTags.Items.PILL_RECIPE)
+                .add(ModItems.INCREASE_SOUL_POWER_PR_LV1.get())
+                .add(ModItems.INCREASE_SOUL_POWER_PR_LV2.get());
+        this.tag(ModTags.Items.PLANTS)
+                .add(ModItems.PLANT_01.get())
+                .add(ModItems.PLANT_02.get())
+                .add(ModItems.PLANT_03.get())
+                .add(ModItems.PLANT_04.get())
+                .add(ModItems.PLANT_05.get());
     }
 }

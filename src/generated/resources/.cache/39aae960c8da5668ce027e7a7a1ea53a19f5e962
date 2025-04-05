@@ -1,2 +1,4 @@
-// 1.20.1	2025-04-03T07:54:34.4775363	Tags for minecraft:item mod id soulland
+// 1.20.1	2025-04-05T12:34:13.3370823	Tags for minecraft:item mod id soulland
 7602e300773a55711ebd6158b671e28640013711 data/soulland/tags/items/al_furnace_fuel.json
+25305fca5f366a151233980392cc08dab1ffbcb7 data/soulland/tags/items/pill_recipe.json
+da964d61bd15422654d1c8cfb3cb7cec04de1551 data/soulland/tags/items/plants.json

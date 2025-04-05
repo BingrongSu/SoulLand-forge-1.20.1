@@ -11,6 +11,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
 import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.block.entity.AlchemyFurnaceBlockEntity;
+import net.robert.soulland.util.ModTags;
 
 public class AlchemyFurnaceMenu extends AbstractContainerMenu {
     public final AlchemyFurnaceBlockEntity blockEntity;
@@ -94,9 +95,22 @@ public class AlchemyFurnaceMenu extends AbstractContainerMenu {
 
         // Check if the slot clicked is one of the vanilla container slots
         if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+            int MATCH_SLOT, MATCH_COUNT;
+            if (sourceStack.is(ModTags.Items.AL_FURNACE_FUEL)) {
+                MATCH_SLOT = AlchemyFurnaceBlockEntity.FUEL_SLOT;
+                MATCH_COUNT = 1;
+            } else if (sourceStack.is(ModTags.Items.PLANTS)) {
+                MATCH_SLOT = AlchemyFurnaceBlockEntity.INPUT_SLOT_1;
+                MATCH_COUNT = 3;
+            } else if (sourceStack.is(ModTags.Items.PILL_RECIPE)) {
+                MATCH_SLOT = AlchemyFurnaceBlockEntity.PILL_RECIPE_SLOT;
+                MATCH_COUNT = 1;
+            } else {
+                return ItemStack.EMPTY;
+            } // If the target item is not the type in the furnace, don't move it.
             // This is a vanilla container slot so merge the stack into the tile inventory
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                    + TE_INVENTORY_SLOT_COUNT, false)) {
+            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX + MATCH_SLOT,
+                    TE_INVENTORY_FIRST_SLOT_INDEX + MATCH_SLOT + MATCH_COUNT, false)) {
                 return ItemStack.EMPTY;  // EMPTY_ITEM
             }
         } else if (pIndex < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {

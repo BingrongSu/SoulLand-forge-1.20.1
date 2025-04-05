@@ -18,6 +18,8 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> AL_FURNACE_FUEL = tag("al_furnace_fuel");
+        public static final TagKey<Item> PILL_RECIPE = tag("pill_recipe");
+        public static final TagKey<Item> PLANTS = tag("plants");
 
         public static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(SoulLand.MOD_ID, name));
