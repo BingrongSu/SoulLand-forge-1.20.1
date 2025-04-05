@@ -216,6 +216,7 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
         maxProgress = MathHelper.getAFMaxProgress(((AbstractPillItem) result.getItem()).getLevel());
         return canInsertItemIntoOutputSlot(result);
+        // TODO Add loot. Drop under any pickaxe.
         // TODO Add JEI compatibility
     }
 
