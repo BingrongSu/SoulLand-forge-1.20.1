@@ -21,7 +21,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.robert.soulland.helper.MathHelper;
-import net.robert.soulland.item.ModItems;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
 import net.robert.soulland.item.custom.pills.AbstractPillItem;
 import net.robert.soulland.recipe.AlFurnaceRecipe;
@@ -216,7 +215,6 @@ public class AlchemyFurnaceBlockEntity extends BlockEntity implements MenuProvid
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
         maxProgress = MathHelper.getAFMaxProgress(((AbstractPillItem) result.getItem()).getLevel());
         return canInsertItemIntoOutputSlot(result);
-        // TODO Add loot. Drop under any pickaxe.
         // TODO Add JEI compatibility
     }
 
