@@ -20,7 +20,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ModTags.Items.AL_FURNACE_FUEL)
-                .add(ModItems.AL_FURNACE_FUEL_LV1.get());
+                .add(ModItems.AL_FURNACE_FUEL_LV1.get())
+                .add(ModItems.AL_FURNACE_FUEL_LV2.get());
         this.tag(ModTags.Items.PILL_RECIPE)
                 .add(ModItems.INCREASE_SOUL_POWER_PR_LV1.get())
                 .add(ModItems.INCREASE_SOUL_POWER_PR_LV2.get());

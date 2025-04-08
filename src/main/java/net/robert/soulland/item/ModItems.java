@@ -44,6 +44,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> AL_FURNACE_FUEL_LV1 = ITEMS.register("al_furnace_fuel_lv1",
             () -> new AlFurnaceFuel(new Item.Properties(), 300));
+    public static final RegistryObject<Item> AL_FURNACE_FUEL_LV2 = ITEMS.register("al_furnace_fuel_lv2",
+            () -> new AlFurnaceFuel(new Item.Properties(), 3000));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

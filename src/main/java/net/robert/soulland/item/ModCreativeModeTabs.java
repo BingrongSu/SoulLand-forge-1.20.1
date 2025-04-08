@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHEN_SILVER_NUGGET.get());
                         output.accept(ModItems.RAW_SHEN_SILVER_INGOT.get());
                         output.accept(ModItems.AL_FURNACE_FUEL_LV1.get());
+                        output.accept(ModItems.AL_FURNACE_FUEL_LV2.get());
 
                         output.accept(ModItems.INCREASE_SOUL_POWER_PILL_LV1.get());
                         output.accept(ModItems.INCREASE_SOUL_POWER_PILL_LV2.get());

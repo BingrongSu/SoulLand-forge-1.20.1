@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.INCREASE_SOUL_POWER_PR_LV2);
 
         simpleItem(ModItems.AL_FURNACE_FUEL_LV1);
+        simpleItem(ModItems.AL_FURNACE_FUEL_LV2);
 
         simpleItem(ModItems.PLANT_01);
         simpleItem(ModItems.PLANT_02);

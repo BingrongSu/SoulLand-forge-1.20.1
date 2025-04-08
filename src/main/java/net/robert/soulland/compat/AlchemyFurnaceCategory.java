@@ -73,7 +73,7 @@ public class AlchemyFurnaceCategory implements IRecipeCategory<AlFurnaceRecipe> 
         builder.addSlot(RecipeIngredientRole.INPUT, 21, 26).addIngredients(recipe.getIngredients().get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 46, 26).addIngredients(recipe.getIngredients().get(3));
         builder.addSlot(RecipeIngredientRole.CATALYST, 86, 22).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 34, 62).addItemStacks(fuelStack);
+//        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 34, 62).addItemStacks(fuelStack);
 
         builder.addSlot(RecipeIngredientRole.OUTPUT, 133, 44).addItemStack(recipe.getResultItem(null));
     }

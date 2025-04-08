@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,24 +29,27 @@ public class ModMiscEvents {
             ItemStack itemStack = event.getItemStack();
             Level world = player.level();
 
-            List<Item> rawFuel = List.of(Items.COAL, Items.CHARCOAL);
+            List<Item> rawFuelLv1 = List.of(Items.COAL, Items.CHARCOAL);
+            List<Item> rawFuelLv2 = List.of(Blocks.COAL_BLOCK.asItem());
 
-            if (!world.isClientSide && player.isCrouching()) {
+            if (player.isCrouching()) {
                 Item usingItem = itemStack.getItem();
-
-                if (rawFuel.contains(usingItem)) {
-                    ItemStack newItem = new ItemStack(ModItems.AL_FURNACE_FUEL_LV1.get(), 1);
-
-                    boolean added = player.getInventory().add(newItem);
-
-                    if (!added) {
-                        player.drop(newItem, false);
-                    }
-
-                    itemStack.shrink(1);
+                if (rawFuelLv1.contains(usingItem)) {
+                    giveItem(player, ModItems.AL_FURNACE_FUEL_LV1.get(), itemStack);
+                } else if (rawFuelLv2.contains(usingItem)) {
+                    giveItem(player, ModItems.AL_FURNACE_FUEL_LV2.get(), itemStack);
                 }
             }
             // TODO: Reduce player's soul power.
+        }
+
+        private static void giveItem(Player player, Item item, ItemStack itemStack) {
+            ItemStack newItem = new ItemStack(item, 1);
+            boolean added = player.getInventory().add(newItem);
+            if (!added) {
+                player.drop(newItem, false);
+            }
+            itemStack.shrink(1);
         }
     }
 }
