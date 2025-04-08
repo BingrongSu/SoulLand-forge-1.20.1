@@ -36,9 +36,9 @@ public class AlchemyFurnaceScreen extends AbstractContainerScreen<AlchemyFurnace
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         renderProgressArrow(guiGraphics, x, y);
         renderFireIcon(guiGraphics, x, y);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
