@@ -25,8 +25,5 @@ public class algorithmTest {
 //        }
 //        System.out.println(b);
 
-        ArrayList<Integer> cba = new ArrayList<>(List.of(1, 2, 3, 4));
-
-
     }
 }
