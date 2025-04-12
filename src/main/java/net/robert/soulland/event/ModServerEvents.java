@@ -1,5 +1,6 @@
 package net.robert.soulland.event;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -35,6 +36,10 @@ public class ModServerEvents {
             Player player = event.getEntity();
             player.sendSystemMessage(player.getDisplayName());
             PlayerData playerData = soulLandData.getPlayerData(player);
+            player.sendSystemMessage(Component.literal("Max Soul Power: %.2f".formatted(playerData.maxSoulPower)));
+            player.sendSystemMessage(Component.literal("Soul Power: %.2f".formatted(playerData.soulPower)));
+            player.sendSystemMessage(Component.literal("Max Spirit Power: %.2f".formatted(playerData.maxSpiritPower)));
+            player.sendSystemMessage(Component.literal("Spirit Power: %.2f".formatted(playerData.spiritPower)));
         }
     }
 }

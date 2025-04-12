@@ -30,17 +30,24 @@ public class ModMiscEvents {
             Level world = player.level();
 
             List<Item> rawFuelLv1 = List.of(Items.COAL, Items.CHARCOAL);
-            List<Item> rawFuelLv2 = List.of(Blocks.COAL_BLOCK.asItem());
+            List<Item> rawFuelLv2 = List.of(Items.BLAZE_ROD);
+
+            double powerConsumption = 0d;
 
             if (player.isCrouching()) {
                 Item usingItem = itemStack.getItem();
                 if (rawFuelLv1.contains(usingItem)) {
                     giveItem(player, ModItems.AL_FURNACE_FUEL_LV1.get(), itemStack);
+                    powerConsumption = 10;
                 } else if (rawFuelLv2.contains(usingItem)) {
                     giveItem(player, ModItems.AL_FURNACE_FUEL_LV2.get(), itemStack);
+                    powerConsumption = 20;
                 }
             }
             // TODO: Reduce player's soul power.
+            if (!player.level().isClientSide())
+                ModServerEvents.soulLandData.addSoulPower(player, -powerConsumption);
+
         }
 
         private static void giveItem(Player player, Item item, ItemStack itemStack) {

@@ -36,4 +36,9 @@ public class PlayerData {
         nbt.putDouble("spiritPower", spiritPower);
         return nbt;
     }
+
+    public void setSoulPower(double soulPower) {
+        this.soulPower = soulPower;
+        System.out.printf("Soul Power set to %.2f\n", this.soulPower);
+    }
 }
