@@ -23,6 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.block.entity.ModBlockEntities;
+import net.robert.soulland.event.ModEvents;
 import net.robert.soulland.event.ModMiscEvents;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
@@ -70,7 +71,7 @@ public class SoulLand {
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        ModMiscEvents.register();
+        ModEvents.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -1,18 +1,19 @@
 package net.robert.soulland.stat;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.saveddata.SavedData;
 
 import java.util.Map;
 import java.util.UUID;
 
-public class ServerData extends SavedData {
+public class SoulLandData extends SavedData {
     public Map<UUID, PlayerData> playersData;
 
-    public ServerData() {
+    public SoulLandData() {
     }
 
-    public ServerData(CompoundTag nbt) {
+    public SoulLandData(CompoundTag nbt) {
         load(nbt);
     }
 
@@ -32,5 +33,17 @@ public class ServerData extends SavedData {
         // Save the playersData.
 
         return nbt;
+    }
+
+    public PlayerData getPlayerData(Player player) {
+        return getPlayerData(player.getUUID());
+    }
+
+    public PlayerData getPlayerData(UUID uuid) {
+        if (playersData.containsKey(uuid)) {
+            return playersData.get(uuid);
+        } else {
+            return new PlayerData(uuid);
+        }
     }
 }

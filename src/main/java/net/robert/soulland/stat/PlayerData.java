@@ -11,6 +11,14 @@ public class PlayerData {
     public double maxSpiritPower;
     public double spiritPower;
 
+    public PlayerData(UUID uuid) {
+        playerUuid = uuid;
+        maxSoulPower = 0d;
+        soulPower = 0d;
+        maxSpiritPower = 0d;
+        spiritPower = 0d;
+    }
+
     public PlayerData(CompoundTag nbt) {
         playerUuid = nbt.getUUID("playerUuid");
         maxSoulPower = nbt.getDouble("maxSoulPower");
