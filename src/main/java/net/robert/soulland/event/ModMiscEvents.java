@@ -44,9 +44,9 @@ public class ModMiscEvents {
                     powerConsumption = 20;
                 }
             }
-            // TODO: Reduce player's soul power.
+            // TODO: Modify the power consumption of this usage.
             if (!player.level().isClientSide())
-                ModServerEvents.soulLandData.addSoulPower(player, -powerConsumption);
+                SoulLand.globalData.addSoulPower(player, -powerConsumption);
 
         }
 

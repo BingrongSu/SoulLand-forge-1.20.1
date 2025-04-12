@@ -27,15 +27,15 @@ public class ModServerEvents {
         @SubscribeEvent
         public static void serverStarted(ServerStartedEvent event) {
             MinecraftServer server = event.getServer();
-            soulLandData = StatManager.getData(Objects.requireNonNull(server));
-            SoulLand.LOGGER.info("Loaded Soul Land Data.");
+            SoulLand.globalData = StatManager.getData(Objects.requireNonNull(server));
+            SoulLand.LOGGER.info("Load Soul Land Data.");
         }
 
         @SubscribeEvent
         public static void playerJoined(PlayerEvent.PlayerLoggedInEvent event) {
             Player player = event.getEntity();
             player.sendSystemMessage(player.getDisplayName());
-            PlayerData playerData = soulLandData.getPlayerData(player);
+            PlayerData playerData = SoulLand.globalData.getPlayerData(player);
             player.sendSystemMessage(Component.literal("Max Soul Power: %.2f".formatted(playerData.maxSoulPower)));
             player.sendSystemMessage(Component.literal("Soul Power: %.2f".formatted(playerData.soulPower)));
             player.sendSystemMessage(Component.literal("Max Spirit Power: %.2f".formatted(playerData.maxSpiritPower)));
