@@ -50,4 +50,9 @@ public class PlayerData {
         this.soulPower = soulPower;
         System.out.printf("Soul Power set to %.2f\n", this.soulPower);
     }
+
+    public void setMaxSoulPower(double maxSoulPower) {
+        this.maxSoulPower = maxSoulPower;
+        System.out.printf("Max Soul Power set to %.2f\n", this.maxSoulPower);
+    }
 }

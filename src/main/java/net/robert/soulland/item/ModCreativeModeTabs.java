@@ -27,6 +27,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.INCREASE_SOUL_POWER_PILL_LV1.get());
                         output.accept(ModItems.INCREASE_SOUL_POWER_PILL_LV2.get());
 
+                        output.accept(ModItems.INCREASE_MAX_SOUL_POWER_PILL_LV1.get());
+                        output.accept(ModItems.INCREASE_MAX_SOUL_POWER_PILL_LV2.get());
+
                         output.accept(ModItems.INCREASE_SOUL_POWER_PR_LV1.get());
                         output.accept(ModItems.INCREASE_SOUL_POWER_PR_LV2.get());
 

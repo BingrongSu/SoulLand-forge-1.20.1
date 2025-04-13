@@ -64,7 +64,20 @@ public class SoulLandData extends SavedData {
         setDirty();
     }
 
-    private void syncPlayerData(ServerPlayer player, PlayerData playerData) {
+    public void addMaxSoulPower(Player player, double amount) {
+        addMaxSoulPower(player.getUUID(), amount);
+    }
+
+    public void addMaxSoulPower(UUID uuid, double amount) {
+        System.out.printf("Add Max Soul Power by %.2f.\n", amount);
+        double n = playersData.get(uuid).maxSoulPower + amount;
+        playersData.get(uuid).setMaxSoulPower(n);
+        PlayerData playerData = playersData.get(uuid);
+        syncPlayerData(playerData.getPlayer(), playerData);
+        setDirty();
+    }
+
+    public static void syncPlayerData(ServerPlayer player, PlayerData playerData) {
         NetworkHandler.INSTANCE.send(
                 PacketDistributor.PLAYER.with(() -> player), new PlayerDataSyncPacket(playerData)
         );

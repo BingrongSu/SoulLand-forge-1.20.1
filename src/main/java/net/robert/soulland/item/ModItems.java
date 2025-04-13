@@ -8,6 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
 import net.robert.soulland.item.custom.pill_recipes.IncreaseSoulPowerPR;
+import net.robert.soulland.item.custom.pills.IncreaseMaxSoulPowerPill;
 import net.robert.soulland.item.custom.pills.IncreaseSoulPowerPill;
 
 public class ModItems {
@@ -22,9 +23,14 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> INCREASE_SOUL_POWER_PILL_LV1 = ITEMS.register("increase_soul_power_pill_lv1",
-            () -> new IncreaseSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 100, 1));
+            () -> new IncreaseSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 10, 1));
     public static final RegistryObject<Item> INCREASE_SOUL_POWER_PILL_LV2 = ITEMS.register("increase_soul_power_pill_lv2",
-            () -> new IncreaseSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 500, 2));
+            () -> new IncreaseSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 50, 2));
+
+    public static final RegistryObject<Item> INCREASE_MAX_SOUL_POWER_PILL_LV1 = ITEMS.register("increase_max_soul_power_pill_lv1",
+            () -> new IncreaseMaxSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 10, 1));
+    public static final RegistryObject<Item> INCREASE_MAX_SOUL_POWER_PILL_LV2 = ITEMS.register("increase_max_soul_power_pill_lv2",
+            () -> new IncreaseMaxSoulPowerPill(new Item.Properties().food(ModFoods.SOUL_POWER_PILL), 50, 2));
 
     public static final RegistryObject<Item> PLANT_01 = ITEMS.register("plant_01",
             () -> new Item(new Item.Properties()));
@@ -42,10 +48,15 @@ public class ModItems {
     public static final RegistryObject<Item> INCREASE_SOUL_POWER_PR_LV2 = ITEMS.register("increase_soul_power_pill_recipe_lv2",
             () -> new IncreaseSoulPowerPR(new Item.Properties(), 2));
 
+//    public static final RegistryObject<Item> INCREASE_MAX_SOUL_POWER_PR_LV1 = ITEMS.register("increase_max_soul_power_pill_recipe_lv1",
+//            () -> new IncreaseMaxSoulPowerPR(new Item.Properties(), 1));
+//    public static final RegistryObject<Item> INCREASE_MAX_SOUL_POWER_PR_LV2 = ITEMS.register("increase_max_soul_power_pill_recipe_lv2",
+//            () -> new IncreaseMaxSoulPowerPR(new Item.Properties(), 2));
+
     public static final RegistryObject<Item> AL_FURNACE_FUEL_LV1 = ITEMS.register("al_furnace_fuel_lv1",
-            () -> new AlFurnaceFuel(new Item.Properties(), 300));
+            () -> new AlFurnaceFuel(new Item.Properties(), 300, 1));
     public static final RegistryObject<Item> AL_FURNACE_FUEL_LV2 = ITEMS.register("al_furnace_fuel_lv2",
-            () -> new AlFurnaceFuel(new Item.Properties(), 3000));
+            () -> new AlFurnaceFuel(new Item.Properties(), 3000, 2));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

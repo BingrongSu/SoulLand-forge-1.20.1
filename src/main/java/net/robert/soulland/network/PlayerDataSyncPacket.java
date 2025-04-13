@@ -28,9 +28,10 @@ public class PlayerDataSyncPacket {
     public static void handle(PlayerDataSyncPacket packet, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             if (ctx.get().getDirection() == NetworkDirection.PLAY_TO_CLIENT) {  // When Client received the packet
-                System.out.println("Client Received the packet \n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+                System.out.println("Client Received the packet \n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
                 DataCache.clientPlayerData = packet.playerData;
                 System.out.println("Client -> Soul power set to " + DataCache.clientPlayerData.soulPower);
+                System.out.println("Client -> Max Soul power set to " + DataCache.clientPlayerData.maxSoulPower);
             }
         });
         ctx.get().setPacketHandled(true);

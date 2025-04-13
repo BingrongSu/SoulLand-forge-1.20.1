@@ -1,28 +1,35 @@
 {
-  "item.soulland.shen_silver_ingot": "Shen Silver Ingot",
-  "item.soulland.shen_silver_nugget": "Shen Silver Nugget",
-  "item.soulland.raw_shen_silver_ingot": "Raw Shen Silver Ingot",
+  "item.soulland.shen_silver_ingot": "沉银锭",
+  "item.soulland.shen_silver_nugget": "沉银粒",
+  "item.soulland.raw_shen_silver_ingot": "粗沉银",
 
-  "item.soulland.increase_soul_power_pill_lv1": "Increase Soul Power Pill Level 1",
-  "item.soulland.increase_soul_power_pill_lv2": "Increase Soul Power Pill Level 2",
+  "item.soulland.increase_soul_power_pill_lv1": "回魂丹",
+  "item.soulland.increase_soul_power_pill_lv2": "回魂丹",
+  "item.soulland.increase_max_soul_power_pill_lv1": "增魂丹",
+  "item.soulland.increase_max_soul_power_pill_lv2": "增魂丹",
 
-  "item.soulland.increase_soul_power_pill_recipe_lv1": "Increase Soul Power Pill Recipe Level 1",
-  "item.soulland.increase_soul_power_pill_recipe_lv2": "Increase Soul Power Pill Recipe Level 2",
+  "item.soulland.increase_soul_power_pill_recipe_lv1": "回魂丹丹方",
+  "item.soulland.increase_soul_power_pill_recipe_lv2": "回魂丹丹方",
 
-  "item.soulland.plant_01": "Plant 01",
-  "item.soulland.plant_02": "Plant 02",
-  "item.soulland.plant_03": "Plant 03",
-  "item.soulland.plant_04": "Plant 04",
-  "item.soulland.plant_05": "Plant 05",
+  "item.soulland.increase_max_soul_power_pill_recipe_lv1": "增魂丹丹方",
+  "item.soulland.increase_max_soul_power_pill_recipe_lv2": "增魂丹丹方",
 
-  "item.soulland.al_furnace_fuel_lv1": "Alchemy Furnace Fuel Lv1",
+  "item.soulland.plant_01": "植物 01",
+  "item.soulland.plant_02": "植物 02",
+  "item.soulland.plant_03": "植物 03",
+  "item.soulland.plant_04": "植物 04",
+  "item.soulland.plant_05": "植物 05",
 
-  "block.soulland.shen_silver_block": "Shen Silver Block",
-  "block.soulland.shen_silver_ore": "Shen Silver Ore",
-  "block.soulland.deepslate_shen_silver_ore": "Deepslate Shen Silver Ore",
-  "block.soulland.alchemy_furnace": "Alchemy Furnace",
+  "item.soulland.al_furnace_fuel_lv1": "炼丹炉燃料",
+  "item.soulland.al_furnace_fuel_lv2": "炼丹炉燃料",
 
-  "title.soulland.alchemy_furnace": "Alchemy Furnace",
+  "block.soulland.shen_silver_block": "沉银块",
+  "block.soulland.shen_silver_ore": "沉银矿",
+  "block.soulland.deepslate_shen_silver_ore": "深层沉银矿",
+  "block.soulland.nether_shen_silver_ore": "下界沉银矿",
+  "block.soulland.alchemy_furnace": "炼丹炉",
+
+  "title.soulland.alchemy_furnace": "炼丹炉",
 
   "increase_soul_power_pill_recipe.content.p1": "§l丹引§r\n昔年于东海沧溟洞天观潮，见礁岩间三物随月相吞吐灵气，暗合周天循环之理。本君取三味调和阴阳，佐以地脉真火炼之，竟得此助长修为之奇丹。虽无逆天改命之威，却胜在中正平和，于筑基至金丹境大有裨益。",
   "increase_soul_power_pill_recipe.content.p2": "...",
@@ -30,5 +37,12 @@
   "increase_soul_power_pill_recipe.content.p4.lv1": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
   "increase_soul_power_pill_recipe.content.p4.lv2": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
 
-  "creativetab.soulland_tab": "Soul Land"
+  "tooltip.lv1": "§f一阶",
+  "tooltip.lv2": "§e二阶",
+  "tooltip.lv3": "§5三阶",
+  "tooltip.lv4": "§0四阶",
+  "tooltip.lv5": "§4五阶",
+  "tooltip.lv6": "§6六阶",
+
+  "creativetab.soulland_tab": "斗罗大陆"
 }

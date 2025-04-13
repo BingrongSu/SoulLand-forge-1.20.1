@@ -1,6 +1,8 @@
-// 1.20.1	2025-04-08T11:03:26.5183267	Item Models: soulland
+// 1.20.1	2025-04-13T11:53:14.2137395	Item Models: soulland
 7dc94a0d5fa22dade2ed594f793b54a24de28d3d assets/soulland/models/item/al_furnace_fuel_lv1.json
 0111fbbfb3d4ea3fb4818cfc0d0c29ea2df0dbcb assets/soulland/models/item/al_furnace_fuel_lv2.json
+6b364b13007cf4b1ea8ab697bdbbd2705dd337e5 assets/soulland/models/item/increase_max_soul_power_pill_lv1.json
+52e982c688b5dbd5412d62d6f305a77704385589 assets/soulland/models/item/increase_max_soul_power_pill_lv2.json
 ccb4acbf051c7a8a9d74d842402c735de17b327b assets/soulland/models/item/increase_soul_power_pill_lv1.json
 7cdfa07208cfd5c82933dde9e13c91ef913e8c6d assets/soulland/models/item/increase_soul_power_pill_lv2.json
 0f3c1aa38e21d4c33feae85431ca369a252d414c assets/soulland/models/item/increase_soul_power_pill_recipe_lv1.json

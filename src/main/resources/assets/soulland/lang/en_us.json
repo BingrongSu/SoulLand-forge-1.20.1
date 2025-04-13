@@ -1,13 +1,25 @@
 {
   "item.soulland.shen_silver_ingot": "Shen Silver Ingot",
   "item.soulland.shen_silver_nugget": "Shen Silver Nugget",
-  "item.soulland.raw_shen_silver_ingot": "Raw Shen Silver Ingot",
+  "item.soulland.raw_shen_silver_ingot": "Raw Shen Silver",
 
-  "item.soulland.increase_soul_power_pill_lv1": "Increase Soul Power Pill Level 1",
-  "item.soulland.increase_soul_power_pill_lv2": "Increase Soul Power Pill Level 2",
+  "item.soulland.increase_soul_power_pill_lv1": "Increase Soul Power Pill",
+  "tooltip.lv1": "§fLevel 1",
+  "tooltip.lv2": "§eLevel 2",
+  "tooltip.lv3": "§5Level 3",
+  "tooltip.lv4": "§0Level 4",
+  "tooltip.lv5": "§4Level 5",
+  "tooltip.lv6": "§6Level 6",
+  "item.soulland.increase_soul_power_pill_lv2": "Increase Soul Power Pill",
 
-  "item.soulland.increase_soul_power_pill_recipe_lv1": "Increase Soul Power Pill Recipe Level 1",
-  "item.soulland.increase_soul_power_pill_recipe_lv2": "Increase Soul Power Pill Recipe Level 2",
+  "item.soulland.increase_max_soul_power_pill_lv1": "Increase Max Soul Power Pill",
+  "item.soulland.increase_max_soul_power_pill_lv2": "Increase Max Soul Power Pill",
+
+  "item.soulland.increase_soul_power_pill_recipe_lv1": "Increase Soul Power Pill Recipe",
+  "item.soulland.increase_soul_power_pill_recipe_lv2": "Increase Soul Power Pill Recipe",
+
+  "item.soulland.increase_max_soul_power_pill_recipe_lv1": "Increase Max Soul Power Pill Recipe",
+  "item.soulland.increase_max_soul_power_pill_recipe_lv2": "Increase Max Soul Power Pill Recipe",
 
   "item.soulland.plant_01": "Plant 01",
   "item.soulland.plant_02": "Plant 02",
@@ -15,11 +27,13 @@
   "item.soulland.plant_04": "Plant 04",
   "item.soulland.plant_05": "Plant 05",
 
-  "item.soulland.al_furnace_fuel_lv1": "Alchemy Furnace Fuel Lv1",
+  "item.soulland.al_furnace_fuel_lv1": "Alchemy Furnace Fuel",
+  "item.soulland.al_furnace_fuel_lv2": "Alchemy Furnace Fuel",
 
   "block.soulland.shen_silver_block": "Shen Silver Block",
   "block.soulland.shen_silver_ore": "Shen Silver Ore",
   "block.soulland.deepslate_shen_silver_ore": "Deepslate Shen Silver Ore",
+  "block.soulland.nether_shen_silver_ore": "Nether Shen Silver Ore",
   "block.soulland.alchemy_furnace": "Alchemy Furnace",
 
   "title.soulland.alchemy_furnace": "Alchemy Furnace",
