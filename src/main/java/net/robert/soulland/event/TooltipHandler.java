@@ -9,6 +9,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
+import net.robert.soulland.item.custom.pill_recipes.IncreaseMaxSoulPowerPR;
+import net.robert.soulland.item.custom.pill_recipes.IncreaseSoulPowerPR;
 import net.robert.soulland.item.custom.pills.IncreaseMaxSoulPowerPill;
 import net.robert.soulland.item.custom.pills.IncreaseSoulPowerPill;
 
@@ -28,6 +30,10 @@ public class TooltipHandler {
             level = ((IncreaseMaxSoulPowerPill) stack.getItem()).getLevel();
         } else if (stack.getItem() instanceof AlFurnaceFuel) {
             level = ((AlFurnaceFuel) stack.getItem()).getLevel();
+        } else if (stack.getItem() instanceof IncreaseSoulPowerPR) {
+            level = ((IncreaseSoulPowerPR) stack.getItem()).getLevel();
+        } else if (stack.getItem() instanceof IncreaseMaxSoulPowerPR) {
+            level = ((IncreaseMaxSoulPowerPR) stack.getItem()).getLevel();
         }
         if (level > 0)
             tooltip.add(Component.translatable("tooltip.lv"+level).withStyle(ChatFormatting.ITALIC));

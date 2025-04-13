@@ -31,11 +31,17 @@
 
   "title.soulland.alchemy_furnace": "炼丹炉",
 
-  "increase_soul_power_pill_recipe.content.p1": "§l丹引§r\n昔年于东海沧溟洞天观潮，见礁岩间三物随月相吞吐灵气，暗合周天循环之理。本君取三味调和阴阳，佐以地脉真火炼之，竟得此助长修为之奇丹。虽无逆天改命之威，却胜在中正平和，于筑基至金丹境大有裨益。",
+  "increase_soul_power_pill_recipe.content.p1": "§l丹引§r\n昔年游历南疆雾瘴之地，见山民以三味相佐，竟能解离魂之症。本君观其药性暗合三才之道，遂改良古方，以离火炉炼足九转，终成此丹。虽不及上古仙丹玄妙，却胜在取材有道，寻常修士皆可一试。",
   "increase_soul_power_pill_recipe.content.p2": "...",
-  "increase_soul_power_pill_recipe.content.p3": "§l丹效§r\n修士服之如沐朝阳，药力化九缕纯阳之气游走奇经，三日内可炼化寻常十日苦修所得灵气，尤善祛除经脉沉疴。",
+  "increase_soul_power_pill_recipe.content.p3": "§l丹效§r\n修士斗法后神魂虚浮者，服之如饮甘泉，三个时辰内可修补魂力裂痕，止灵识涣散之危。打坐调息时含丹于齿间，青冥之气自任脉上行，能助修士收拢杂念，防心魔趁虚而入。",
   "increase_soul_power_pill_recipe.content.p4.lv1": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
   "increase_soul_power_pill_recipe.content.p4.lv2": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
+
+  "increase_max_soul_power_pill_recipe.content.p1": "§l丹引§r\n昔年于东海沧溟洞天观潮，见礁岩间三物随月相吞吐灵气，暗合周天循环之理。本君取三味调和阴阳，佐以地脉真火炼之，竟得此助长修为之奇丹。虽无逆天改命之威，却胜在中正平和，于筑基至金丹境大有裨益。",
+  "increase_max_soul_power_pill_recipe.content.p2": "...",
+  "increase_max_soul_power_pill_recipe.content.p3": "§l丹效§r\n修士服之如沐朝阳，药力化九缕纯阳之气游走奇经，三日内可炼化寻常十日苦修所得灵气，尤善祛除经脉沉疴。",
+  "increase_max_soul_power_pill_recipe.content.p4.lv1": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
+  "increase_max_soul_power_pill_recipe.content.p4.lv2": "§l丹方§r\n于炼丹炉中炼制，\n§6【】【】【】§r\n辅以此方，可炼得此丹",
 
   "tooltip.lv1": "§f一阶",
   "tooltip.lv2": "§e二阶",
@@ -44,5 +50,5 @@
   "tooltip.lv5": "§4五阶",
   "tooltip.lv6": "§6六阶",
 
-  "creativetab.soulland_tab": "斗罗大陆"
+  "creativetab.soulland_tab": "斗罗世界"
 }

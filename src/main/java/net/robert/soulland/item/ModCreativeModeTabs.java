@@ -33,6 +33,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.INCREASE_SOUL_POWER_PR_LV1.get());
                         output.accept(ModItems.INCREASE_SOUL_POWER_PR_LV2.get());
 
+                        output.accept(ModItems.INCREASE_MAX_SOUL_POWER_PR_LV1.get());
+                        output.accept(ModItems.INCREASE_MAX_SOUL_POWER_PR_LV2.get());
+
                         output.accept(ModItems.PLANT_01.get());
                         output.accept(ModItems.PLANT_02.get());
                         output.accept(ModItems.PLANT_03.get());

@@ -15,10 +15,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.robert.soulland.SoulLand;
 
-public class IncreaseSoulPowerPR extends Item {
+public class IncreaseMaxSoulPowerPR extends Item {
     private final int level;
 
-    public IncreaseSoulPowerPR(Properties pProperties, int level) {
+    public IncreaseMaxSoulPowerPR(Properties pProperties, int level) {
         super(pProperties);
         this.level = level;
     }
@@ -37,10 +37,10 @@ public class IncreaseSoulPowerPR extends Item {
             tag.putString("author", SoulLand.MOD_ID);
 
             ListTag pages = new ListTag();
-            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_soul_power_pill_recipe.content.p1"))));
-            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_soul_power_pill_recipe.content.p2"))));
-            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_soul_power_pill_recipe.content.p3"))));
-            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_soul_power_pill_recipe.content.p4.lv%d".formatted(level)))));
+            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_max_soul_power_pill_recipe.content.p1"))));
+            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_max_soul_power_pill_recipe.content.p2"))));
+            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_max_soul_power_pill_recipe.content.p3"))));
+            pages.add(StringTag.valueOf(Component.Serializer.toJson(Component.translatable("increase_max_soul_power_pill_recipe.content.p4.lv%d".formatted(level)))));
 
             tag.put("pages", pages);
             Minecraft.getInstance().setScreen(new BookViewScreen(BookViewScreen.BookAccess.fromItem(book)));

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "soulland:item/increase_max_soul_power_pill_recipe_lv2"
+  }
+}

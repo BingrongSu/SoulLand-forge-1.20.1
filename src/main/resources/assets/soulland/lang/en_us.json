@@ -38,11 +38,17 @@
 
   "title.soulland.alchemy_furnace": "Alchemy Furnace",
 
-  "increase_soul_power_pill_recipe.content.p1": "§lOrigin§r\nWhile meditating on tidal rhythms within the Eastern Sea’s Abyssal Grotto, I witnessed three sacred specimens pulsing with lunar essence. By harmonizing their triune essence with Yin-Yang alchemy and refining them in earth-vein flames,",
-  "increase_soul_power_pill_recipe.content.p2": "§lOrigin§r\nI forged this pill to amplify cultivation. Though it cannot defy heaven’s decree, its balanced potency aids disciples from Foundation Establishment to Golden Core.",
-  "increase_soul_power_pill_recipe.content.p3": "§lPill Efficacy§r\nUpon consumption, the pill dissolves into nine solar meridians, circulating through rare channels. Within three dawns, it refines tenfold the spiritual energy of ordinary cultivation, purging meridian stagnation.",
+  "increase_soul_power_pill_recipe.content.p1": "§lOrigin§r\nIn my wanderings through the Southern Miasma Realms, I witnessed mountain folk combining *Soulverdant Herb*, *Moonshadow Creeper*, and *Crimsol Sunfruit* to mend fractured spirits. Observing their synergy with the Three Powers ",
+  "increase_soul_power_pill_recipe.content.p2": "§lOrigin§r\nDoctrine, I refined the crude recipe through Nine Revolutions in the Emberforge Crucible. Though lacking ancient celestial grandeur, this elixir’s accessible ingredients make it attainable for common cultivators.",
+  "increase_soul_power_pill_recipe.content.p3": "§lPill Efficacy§r\nFor those whose ethereal essence trembles after spiritual combat: Ingestion flows like sipping celestial nectar, sealing soul-fractures within three celestial hours, anchoring dissipating consciousness. ",
   "increase_soul_power_pill_recipe.content.p4.lv1": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
   "increase_soul_power_pill_recipe.content.p4.lv2": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
+
+  "increase_max_soul_power_pill_recipe.content.p1": "§lOrigin§r\nWhile meditating on tidal rhythms within the Eastern Sea’s Abyssal Grotto, I witnessed three sacred specimens pulsing with lunar essence. By harmonizing their triune essence with Yin-Yang alchemy and refining them in earth-vein flames,",
+  "increase_max_soul_power_pill_recipe.content.p2": "§lOrigin§r\nI forged this pill to amplify cultivation. Though it cannot defy heaven’s decree, its balanced potency aids disciples from Foundation Establishment to Golden Core.",
+  "increase_max_soul_power_pill_recipe.content.p3": "§lPill Efficacy§r\nUpon consumption, the pill dissolves into nine solar meridians, circulating through rare channels. Within three dawns, it refines tenfold the spiritual energy of ordinary cultivation, purging meridian stagnation.",
+  "increase_max_soul_power_pill_recipe.content.p4.lv1": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
+  "increase_max_soul_power_pill_recipe.content.p4.lv2": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
 
   "creativetab.soulland_tab": "Soul Land"
 }

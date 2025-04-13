@@ -48,7 +48,10 @@ public class SoulLandData extends SavedData {
     }
 
     public PlayerData getPlayerData(UUID uuid) {
-        return playersData.getOrDefault(uuid, new PlayerData(uuid));
+        if (!playersData.containsKey(uuid)) {
+            playersData.put(uuid, new PlayerData(uuid));
+        }
+        return playersData.get(uuid);
     }
 
     public void addSoulPower(Player player, double amount) {
@@ -57,10 +60,11 @@ public class SoulLandData extends SavedData {
 
     public void addSoulPower(UUID uuid, double amount) {
         System.out.printf("Add Soul Power by %.2f.\n", amount);
-        double n = playersData.get(uuid).soulPower + amount;
+        double n = Math.min(getPlayerData(uuid).soulPower + amount, getPlayerData(uuid).maxSoulPower);
         playersData.get(uuid).setSoulPower(n);
         PlayerData playerData = playersData.get(uuid);
         syncPlayerData(playerData.getPlayer(), playerData);
+        playerData.getPlayer().sendSystemMessage(Component.literal("Current soul power: %.2f".formatted(n)));
         setDirty();
     }
 
@@ -70,10 +74,11 @@ public class SoulLandData extends SavedData {
 
     public void addMaxSoulPower(UUID uuid, double amount) {
         System.out.printf("Add Max Soul Power by %.2f.\n", amount);
-        double n = playersData.get(uuid).maxSoulPower + amount;
+        double n = getPlayerData(uuid).maxSoulPower + amount;
         playersData.get(uuid).setMaxSoulPower(n);
         PlayerData playerData = playersData.get(uuid);
         syncPlayerData(playerData.getPlayer(), playerData);
+        playerData.getPlayer().sendSystemMessage(Component.literal("Current max soul power: %.2f".formatted(n)));
         setDirty();
     }
 
