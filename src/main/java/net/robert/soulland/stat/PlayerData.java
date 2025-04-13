@@ -13,8 +13,8 @@ public class PlayerData {
     public double soulPower;
     public double maxSpiritPower;
     public double spiritPower;
-    public String openedSoulSpirit = "null";
-    public Map<String, List<Double>> soulRingYears = new HashMap<>();
+    public String openedSoulSpirit;
+    public Map<String, List<Double>> soulRingYears;
 
     public PlayerData(UUID uuid) {
         playerUuid = uuid;
@@ -33,6 +33,8 @@ public class PlayerData {
         maxSpiritPower = nbt.getDouble("maxSpiritPower");
         spiritPower = nbt.getDouble("spiritPower");
 
+        openedSoulSpirit = nbt.getString("openedSoulSpirit");
+        soulRingYears = new HashMap<>();
         CompoundTag yearsNbt = nbt.getCompound("soulRingYears");
         if (!yearsNbt.getAllKeys().isEmpty())
             yearsNbt.getAllKeys().forEach(key -> {
