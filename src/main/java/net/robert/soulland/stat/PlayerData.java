@@ -1,6 +1,9 @@
 package net.robert.soulland.stat;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.server.ServerLifecycleHooks;
 
 import java.util.UUID;
 
@@ -35,6 +38,12 @@ public class PlayerData {
         nbt.putDouble("maxSpiritPower", maxSpiritPower);
         nbt.putDouble("spiritPower", spiritPower);
         return nbt;
+    }
+
+    public ServerPlayer getPlayer() {
+        MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
+        if (server == null) return null;
+        return server.getPlayerList().getPlayer(playerUuid);
     }
 
     public void setSoulPower(double soulPower) {

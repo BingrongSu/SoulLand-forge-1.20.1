@@ -11,6 +11,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.item.ModItems;
+import net.robert.soulland.stat.DataCache;
 
 import java.util.List;
 
@@ -43,10 +44,10 @@ public class ModMiscEvents {
                     giveItem(player, ModItems.AL_FURNACE_FUEL_LV2.get(), itemStack);
                     powerConsumption = 20;
                 }
+                if (!player.level().isClientSide() && powerConsumption != 0)
+                    DataCache.globalData.addSoulPower(player, -powerConsumption);
             }
             // TODO: Modify the power consumption of this usage.
-            if (!player.level().isClientSide())
-                SoulLand.globalData.addSoulPower(player, -powerConsumption);
 
         }
 

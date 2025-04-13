@@ -19,6 +19,7 @@ import net.robert.soulland.block.entity.ModBlockEntities;
 import net.robert.soulland.event.ModEvents;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
+import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.recipe.ModRecipes;
 import net.robert.soulland.screen.AlchemyFurnaceScreen;
 import net.robert.soulland.screen.ModMenuTypes;
@@ -32,8 +33,6 @@ public class SoulLand {
     public static final String MOD_ID = "soulland";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-
-    public static SoulLandData globalData;
 
     public SoulLand() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -64,6 +63,7 @@ public class SoulLand {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         ModEvents.register(modEventBus);
+        NetworkHandler.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

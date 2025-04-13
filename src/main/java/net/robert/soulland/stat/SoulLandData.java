@@ -1,9 +1,14 @@
 package net.robert.soulland.stat;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraftforge.network.PacketDistributor;
+import net.robert.soulland.network.NetworkHandler;
+import net.robert.soulland.network.PlayerDataSyncPacket;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +57,16 @@ public class SoulLandData extends SavedData {
 
     public void addSoulPower(UUID uuid, double amount) {
         System.out.printf("Add Soul Power by %.2f.\n", amount);
-        playersData.get(uuid).setSoulPower(playersData.get(uuid).soulPower + amount);
+        double n = playersData.get(uuid).soulPower + amount;
+        playersData.get(uuid).setSoulPower(n);
+        PlayerData playerData = playersData.get(uuid);
+        syncPlayerData(playerData.getPlayer(), playerData);
         setDirty();
+    }
+
+    private void syncPlayerData(ServerPlayer player, PlayerData playerData) {
+        NetworkHandler.INSTANCE.send(
+                PacketDistributor.PLAYER.with(() -> player), new PlayerDataSyncPacket(playerData)
+        );
     }
 }

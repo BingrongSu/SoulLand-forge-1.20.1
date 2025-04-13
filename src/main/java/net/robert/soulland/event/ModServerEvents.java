@@ -8,6 +8,7 @@ import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.robert.soulland.SoulLand;
+import net.robert.soulland.stat.DataCache;
 import net.robert.soulland.stat.PlayerData;
 import net.robert.soulland.stat.SoulLandData;
 import net.robert.soulland.stat.StatManager;
@@ -27,7 +28,7 @@ public class ModServerEvents {
         @SubscribeEvent
         public static void serverStarted(ServerStartedEvent event) {
             MinecraftServer server = event.getServer();
-            SoulLand.globalData = StatManager.getData(Objects.requireNonNull(server));
+            DataCache.globalData = StatManager.getData(Objects.requireNonNull(server));
             SoulLand.LOGGER.info("Load Soul Land Data.");
         }
 
@@ -35,7 +36,7 @@ public class ModServerEvents {
         public static void playerJoined(PlayerEvent.PlayerLoggedInEvent event) {
             Player player = event.getEntity();
             player.sendSystemMessage(player.getDisplayName());
-            PlayerData playerData = SoulLand.globalData.getPlayerData(player);
+            PlayerData playerData = DataCache.globalData.getPlayerData(player);
             player.sendSystemMessage(Component.literal("Max Soul Power: %.2f".formatted(playerData.maxSoulPower)));
             player.sendSystemMessage(Component.literal("Soul Power: %.2f".formatted(playerData.soulPower)));
             player.sendSystemMessage(Component.literal("Max Spirit Power: %.2f".formatted(playerData.maxSpiritPower)));
