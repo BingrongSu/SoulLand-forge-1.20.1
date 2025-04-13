@@ -5,7 +5,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.ServerLifecycleHooks;
 
-import java.util.UUID;
+import java.util.*;
 
 public class PlayerData {
     public UUID playerUuid;
@@ -13,6 +13,8 @@ public class PlayerData {
     public double soulPower;
     public double maxSpiritPower;
     public double spiritPower;
+    public String openedSoulSpirit = "null";
+    public Map<String, List<Double>> soulRingYears = new HashMap<>();
 
     public PlayerData(UUID uuid) {
         playerUuid = uuid;
@@ -20,6 +22,8 @@ public class PlayerData {
         soulPower = 0d;
         maxSpiritPower = 0d;
         spiritPower = 0d;
+        openedSoulSpirit = "null";
+        soulRingYears = new HashMap<>();
     }
 
     public PlayerData(CompoundTag nbt) {
@@ -28,6 +32,17 @@ public class PlayerData {
         soulPower = nbt.getDouble("soulPower");
         maxSpiritPower = nbt.getDouble("maxSpiritPower");
         spiritPower = nbt.getDouble("spiritPower");
+
+        CompoundTag yearsNbt = nbt.getCompound("soulRingYears");
+        if (!yearsNbt.getAllKeys().isEmpty())
+            yearsNbt.getAllKeys().forEach(key -> {
+                CompoundTag yearListNbt = yearsNbt.getCompound(key);
+                List<Double> yearList = new ArrayList<>();
+                for (int i = 0; yearListNbt.contains(""+i); i++) {
+                    yearList.add(yearListNbt.getDouble(""+i));
+                }
+                soulRingYears.put(key, yearList);
+            });
     }
 
     public CompoundTag toNbtCompound() {
@@ -37,6 +52,19 @@ public class PlayerData {
         nbt.putDouble("soulPower", soulPower);
         nbt.putDouble("maxSpiritPower", maxSpiritPower);
         nbt.putDouble("spiritPower", spiritPower);
+        nbt.putString("openedSoulSpirit", openedSoulSpirit);
+
+        CompoundTag yearsNbt = new CompoundTag();
+        if (!soulRingYears.isEmpty())
+            soulRingYears.forEach((name, list) -> {
+                CompoundTag yearListNbt = new CompoundTag();
+                for (int i = 0; i < list.size(); i++) {
+                    yearListNbt.putDouble(""+i, list.get(i));
+                }
+                yearsNbt.put(name, yearListNbt);
+            });
+        nbt.put("soulRingYears", yearsNbt);
+
         return nbt;
     }
 

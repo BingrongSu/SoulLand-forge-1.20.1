@@ -42,6 +42,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PLANT_04.get());
                         output.accept(ModItems.PLANT_05.get());
 
+                        output.accept(ModItems.FENG_HUANG_SS_ITEM.get());
+
                         output.accept(ModBlocks.SHEN_SILVER_BLOCK.get());
                         output.accept(ModBlocks.SHEN_SILVER_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get());

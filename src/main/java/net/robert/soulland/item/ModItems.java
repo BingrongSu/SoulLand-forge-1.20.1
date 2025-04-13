@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
+import net.robert.soulland.item.custom.SoulSpiritItem;
 import net.robert.soulland.item.custom.pill_recipes.IncreaseMaxSoulPowerPR;
 import net.robert.soulland.item.custom.pill_recipes.IncreaseSoulPowerPR;
 import net.robert.soulland.item.custom.pills.IncreaseMaxSoulPowerPill;
@@ -58,6 +59,9 @@ public class ModItems {
             () -> new AlFurnaceFuel(new Item.Properties(), 300, 1));
     public static final RegistryObject<Item> AL_FURNACE_FUEL_LV2 = ITEMS.register("al_furnace_fuel_lv2",
             () -> new AlFurnaceFuel(new Item.Properties(), 3000, 2));
+
+    public static final RegistryObject<Item> FENG_HUANG_SS_ITEM = ITEMS.register("feng_huang_ss_item",
+            () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "fengHuang"));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

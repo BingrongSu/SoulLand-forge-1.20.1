@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.block.entity.ModBlockEntities;
 import net.robert.soulland.event.ModEvents;
+import net.robert.soulland.helper.MathHelper;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
 import net.robert.soulland.network.NetworkHandler;
@@ -40,6 +41,7 @@ public class SoulLand {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        MathHelper.initialize();
         // Register Mod creative mode tabs
         ModCreativeModeTabs.register(modEventBus);
 

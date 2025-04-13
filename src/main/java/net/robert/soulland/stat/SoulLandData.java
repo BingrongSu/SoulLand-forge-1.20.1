@@ -7,9 +7,11 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraftforge.network.PacketDistributor;
+import net.robert.soulland.helper.MathHelper;
 import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.network.PlayerDataSyncPacket;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -82,9 +84,39 @@ public class SoulLandData extends SavedData {
         setDirty();
     }
 
+    public void syncPlayerData(ServerPlayer player) {
+        PlayerData playerData = playersData.get(player.getUUID());
+        syncPlayerData(player, playerData);
+    }
+
     public static void syncPlayerData(ServerPlayer player, PlayerData playerData) {
         NetworkHandler.INSTANCE.send(
                 PacketDistributor.PLAYER.with(() -> player), new PlayerDataSyncPacket(playerData)
         );
     }
+
+    public void appendSoulSpirit(ServerPlayer player, String soulSpirit) {
+        if (!getPlayerData(player).soulRingYears.containsKey(soulSpirit)) {
+            playersData.get(player.getUUID()).soulRingYears.put(soulSpirit, new ArrayList<>());
+            player.sendSystemMessage(Component.literal("Gain Soul Spirit: " + soulSpirit + "!"));
+            setDirty();
+            syncPlayerData(player);
+        } else {
+            player.sendSystemMessage(Component.literal("Already have that soul spirit!"));
+        }
+    }
+
+    public void awaken(ServerPlayer player) {
+        UUID uuid = player.getUUID();
+        assert Minecraft.getInstance().level != null;
+        int initialLevel = MathHelper.getInitialLevel(Minecraft.getInstance().level.getGameTime());
+        double initialSoulPower = MathHelper.level2SoulPower(initialLevel);
+        addMaxSoulPower(uuid, initialSoulPower);
+        addSoulPower(uuid, initialSoulPower);
+        player.sendSystemMessage(Component.literal("Awaken!"));
+        player.sendSystemMessage(Component.literal("Initial soul power level: " + initialLevel));
+        player.sendSystemMessage(Component.literal("Initial soul power: " + initialSoulPower));
+    }
+
+    // TODO 觉醒武魂后获得成就：千分之一 -- 据说，不到千分之一的人觉醒武魂后拥有魂力；百年难遇 -- ；天选之子，
 }

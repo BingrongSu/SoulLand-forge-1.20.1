@@ -41,6 +41,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PLANT_03);
         simpleItem(ModItems.PLANT_04);
         simpleItem(ModItems.PLANT_05);
+
+        simpleItem(ModItems.FENG_HUANG_SS_ITEM);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
