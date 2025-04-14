@@ -3,6 +3,7 @@ package net.robert.soulland;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -20,11 +21,11 @@ import net.robert.soulland.event.ModEvents;
 import net.robert.soulland.helper.MathHelper;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
+import net.robert.soulland.key.ModKeyBinds;
 import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.recipe.ModRecipes;
 import net.robert.soulland.screen.AlchemyFurnaceScreen;
 import net.robert.soulland.screen.ModMenuTypes;
-import net.robert.soulland.stat.SoulLandData;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file

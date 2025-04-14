@@ -50,5 +50,13 @@
   "increase_max_soul_power_pill_recipe.content.p4.lv1": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
   "increase_max_soul_power_pill_recipe.content.p4.lv2": "§lPill Recipe§r\nIn Alchemy Furnace,\n§6[][][]§r\nwith this recipe, can make the pill.",
 
-  "creativetab.soulland_tab": "Soul Land"
+  "creativetab.soulland_tab": "Soul Land",
+  "key.categories.soulland": "Soul Land",
+  "key.soulland.switch_soul_spirit": "Switch Soul Spirit",
+
+  "soulland.message.switch_soul_spirit": "Soul Spirit: ",
+
+  "soulland.soul_spirit.fengHuang": "Feng Huang",
+  "soulland.soul_spirit.liuLi": "Liu Li",
+  "soulland.soul_spirit.null": "Closed"
 }

@@ -6,5 +6,6 @@ public class ModEvents {
     public static void register(IEventBus eventBus) {
         ModMiscEvents.register();
         ModServerEvents.register();
+        ModClientEvents.register();
     }
 }

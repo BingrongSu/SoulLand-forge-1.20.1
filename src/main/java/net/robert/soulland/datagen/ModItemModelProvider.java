@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PLANT_05);
 
         simpleItem(ModItems.FENG_HUANG_SS_ITEM);
+        simpleItem(ModItems.LIU_LI_SS_ITEM);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

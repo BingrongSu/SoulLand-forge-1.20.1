@@ -56,6 +56,15 @@ public class SoulLandData extends SavedData {
         return playersData.get(uuid);
     }
 
+    public void setPlayerData(Player player, PlayerData playerData) {
+        setPlayerData(player.getUUID(), playerData);
+    }
+
+    public void setPlayerData(UUID uuid, PlayerData playerData) {
+        playersData.get(uuid).load(playerData.toNbtCompound());
+        setDirty();
+    }
+
     public void addSoulPower(Player player, double amount) {
         addSoulPower(player.getUUID(), amount);
     }
@@ -118,5 +127,11 @@ public class SoulLandData extends SavedData {
         player.sendSystemMessage(Component.literal("Initial soul power: " + initialSoulPower));
     }
 
+    // TODO 武魂觉醒相关：觉醒台，水晶球、武魂觉醒事件;
+    // TODO 添加武魂：九宝琉璃塔；武魂切换
+    // TODO 魂力升级瓶颈设置（每十级）
+    // TODO 添加魂环Item，魂环显示及同步
+    // TODO 吸收魂环后升级、增加更多魂力
     // TODO 觉醒武魂后获得成就：千分之一 -- 据说，不到千分之一的人觉醒武魂后拥有魂力；百年难遇 -- ；天选之子，
+    // TODO 吸收魂环成就
 }

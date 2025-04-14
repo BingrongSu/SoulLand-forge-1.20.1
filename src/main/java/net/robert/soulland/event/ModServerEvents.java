@@ -17,7 +17,6 @@ import net.robert.soulland.stat.StatManager;
 import java.util.Objects;
 
 public class ModServerEvents {
-    public static SoulLandData soulLandData;
 
     public static void register() {
         SoulLand.LOGGER.info("Registering Mod Server Events.");

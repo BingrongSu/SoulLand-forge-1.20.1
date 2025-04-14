@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "soulland:item/liu_li_ss_item"
+  }
+}

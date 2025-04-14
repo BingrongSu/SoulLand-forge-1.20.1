@@ -27,6 +27,10 @@ public class PlayerData {
     }
 
     public PlayerData(CompoundTag nbt) {
+        load(nbt);
+    }
+
+    public void load(CompoundTag nbt) {
         playerUuid = nbt.getUUID("playerUuid");
         maxSoulPower = nbt.getDouble("maxSoulPower");
         soulPower = nbt.getDouble("soulPower");

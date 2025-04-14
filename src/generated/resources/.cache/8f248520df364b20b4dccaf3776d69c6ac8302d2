@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-13T17:56:25.8371014	Item Models: soulland
+// 1.20.1	2025-04-14T11:17:22.7736309	Item Models: soulland
 7dc94a0d5fa22dade2ed594f793b54a24de28d3d assets/soulland/models/item/al_furnace_fuel_lv1.json
 0111fbbfb3d4ea3fb4818cfc0d0c29ea2df0dbcb assets/soulland/models/item/al_furnace_fuel_lv2.json
 79737029f74f61a371fdc68b5582565fb723d7b5 assets/soulland/models/item/feng_huang_ss_item.json
@@ -10,6 +10,7 @@ ccb4acbf051c7a8a9d74d842402c735de17b327b assets/soulland/models/item/increase_so
 7cdfa07208cfd5c82933dde9e13c91ef913e8c6d assets/soulland/models/item/increase_soul_power_pill_lv2.json
 0f3c1aa38e21d4c33feae85431ca369a252d414c assets/soulland/models/item/increase_soul_power_pill_recipe_lv1.json
 8e3c7c2fc5b9f2464f2f6cf493299c5615a8b6d2 assets/soulland/models/item/increase_soul_power_pill_recipe_lv2.json
+a067912683996891b53006b44c9936cd7678a16e assets/soulland/models/item/liu_li_ss_item.json
 ddce01e998565c5b1e1fbbc94f3318df5109872a assets/soulland/models/item/plant_01.json
 bdf436689fc111cfaf59a6689c87875edcc11fae assets/soulland/models/item/plant_02.json
 55852c454dd19b85e50601fa4df9967f23618c56 assets/soulland/models/item/plant_03.json

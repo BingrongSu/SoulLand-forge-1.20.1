@@ -62,6 +62,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> FENG_HUANG_SS_ITEM = ITEMS.register("feng_huang_ss_item",
             () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "fengHuang"));
+    public static final RegistryObject<Item> LIU_LI_SS_ITEM = ITEMS.register("liu_li_ss_item",
+            () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "liuLi"));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
