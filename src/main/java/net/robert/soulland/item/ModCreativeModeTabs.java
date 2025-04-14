@@ -51,6 +51,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.NETHER_SHEN_SILVER_ORE.get());
 
                         output.accept(ModBlocks.ALCHEMY_FURNACE.get());
+                        output.accept(ModBlocks.AWAKEN_BASE.get());
+                        output.accept(ModBlocks.CRYSTAL_BALL.get());
                     }))
                     .build());
 

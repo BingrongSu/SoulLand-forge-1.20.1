@@ -16,6 +16,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("alchemy_furnace_be", () ->
                     BlockEntityType.Builder.of(AlchemyFurnaceBlockEntity::new,
                             ModBlocks.ALCHEMY_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<CrystalBallBlockEntity>> CRYSTAL_BALL_BE =
+            BLOCK_ENTITIES.register("crystal_ball_be", () ->
+                    BlockEntityType.Builder.of(CrystalBallBlockEntity::new,
+                            ModBlocks.CRYSTAL_BALL.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

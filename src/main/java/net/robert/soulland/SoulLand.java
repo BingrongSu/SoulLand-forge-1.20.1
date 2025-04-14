@@ -2,8 +2,10 @@ package net.robert.soulland;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -17,11 +19,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.block.entity.ModBlockEntities;
+import net.robert.soulland.block.entity.renderer.CrystalBallBERenderer;
 import net.robert.soulland.event.ModEvents;
 import net.robert.soulland.helper.MathHelper;
 import net.robert.soulland.item.ModCreativeModeTabs;
 import net.robert.soulland.item.ModItems;
-import net.robert.soulland.key.ModKeyBinds;
 import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.recipe.ModRecipes;
 import net.robert.soulland.screen.AlchemyFurnaceScreen;
@@ -87,6 +89,13 @@ public class SoulLand {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.ALCHEMY_FURNACE_MENU.get(), AlchemyFurnaceScreen::new);
+            event.enqueueWork(() -> ItemBlockRenderTypes.setRenderLayer(ModBlocks.CRYSTAL_BALL.get(),
+                    RenderType.translucent()));
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.CRYSTAL_BALL_BE.get(), CrystalBallBERenderer::new);
         }
     }
 }

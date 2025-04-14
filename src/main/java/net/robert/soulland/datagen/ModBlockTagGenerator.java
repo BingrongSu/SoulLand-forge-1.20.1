@@ -21,7 +21,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get())
                 .add(ModBlocks.NETHER_SHEN_SILVER_ORE.get())
-                .add(ModBlocks.SHEN_SILVER_ORE.get());
+                .add(ModBlocks.SHEN_SILVER_ORE.get())
+                .add(ModBlocks.AWAKEN_BASE.get())
+                .add(ModBlocks.ALCHEMY_FURNACE.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.SHEN_SILVER_BLOCK.get());
 
@@ -29,6 +31,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.SHEN_SILVER_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_SHEN_SILVER_ORE.get())
                 .add(ModBlocks.NETHER_SHEN_SILVER_ORE.get())
-                .add(ModBlocks.SHEN_SILVER_ORE.get());
+                .add(ModBlocks.SHEN_SILVER_ORE.get())
+                .add(ModBlocks.AWAKEN_BASE.get())
+                .add(ModBlocks.ALCHEMY_FURNACE.get());
     }
 }

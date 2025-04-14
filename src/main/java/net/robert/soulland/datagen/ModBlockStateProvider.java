@@ -23,6 +23,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockWithItem(ModBlocks.ALCHEMY_FURNACE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/alchemy_furnace")));
+        simpleBlockWithItem(ModBlocks.AWAKEN_BASE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/awaken_base")));
+        simpleBlockWithItem(ModBlocks.CRYSTAL_BALL.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/crystal_ball")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
