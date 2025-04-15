@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraftforge.network.PacketDistributor;
@@ -11,13 +12,12 @@ import net.robert.soulland.helper.MathHelper;
 import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.network.PlayerDataSyncPacket;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class SoulLandData extends SavedData {
     public Map<UUID, PlayerData> playersData = new HashMap<>();
+
+    public static final List<String> soulSpiritPool = List.of("sausage", "liuLi", "fengHuang");
 
     public SoulLandData() {
     }
@@ -116,19 +116,25 @@ public class SoulLandData extends SavedData {
     }
 
     public void awaken(ServerPlayer player) {
-        UUID uuid = player.getUUID();
+        if (getPlayerData(player).maxSoulPower > 0) {
+            player.sendSystemMessage(Component.literal("Already awoken!"));
+            return;
+        }
         assert Minecraft.getInstance().level != null;
         int initialLevel = MathHelper.getInitialLevel(Minecraft.getInstance().level.getGameTime());
         double initialSoulPower = MathHelper.level2SoulPower(initialLevel);
-        addMaxSoulPower(uuid, initialSoulPower);
-        addSoulPower(uuid, initialSoulPower);
+        addMaxSoulPower(player, initialSoulPower);
+        addSoulPower(player, initialSoulPower);
         player.sendSystemMessage(Component.literal("Awaken!"));
         player.sendSystemMessage(Component.literal("Initial soul power level: " + initialLevel));
         player.sendSystemMessage(Component.literal("Initial soul power: " + initialSoulPower));
+        RandomSource random = RandomSource.create();
+        appendSoulSpirit(player, soulSpiritPool.get(random.nextInt(soulSpiritPool.size())));
+        if (random.nextLong() % 6 == 1) appendSoulSpirit(player, soulSpiritPool.get(random.nextInt(soulSpiritPool.size())));
+        if (random.nextLong() % 6 == 1) appendSoulSpirit(player, soulSpiritPool.get(random.nextInt(soulSpiritPool.size())));
     }
 
-    // TODO 武魂觉醒相关：觉醒台，水晶球、武魂觉醒事件;
-    // TODO 添加武魂：九宝琉璃塔；武魂切换
+    // TODO 武魂觉醒相关：武魂觉醒事件;
     // TODO 魂力升级瓶颈设置（每十级）
     // TODO 添加魂环Item，魂环显示及同步
     // TODO 吸收魂环后升级、增加更多魂力

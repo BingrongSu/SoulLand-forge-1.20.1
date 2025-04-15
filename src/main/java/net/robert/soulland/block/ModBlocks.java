@@ -36,7 +36,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRYSTAL_BALL = registerBlock("crystal_ball",
             () -> new CrystalBallBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
                     .noOcclusion()
-                    .lightLevel(state -> 6)
+                    .lightLevel(state -> 9)
                     .isViewBlocking((state, world, pos) -> false)));
 
 

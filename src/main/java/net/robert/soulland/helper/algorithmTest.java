@@ -1,5 +1,7 @@
 package net.robert.soulland.helper;
 
+import net.minecraft.util.RandomSource;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,26 @@ public class algorithmTest {
 //            }
 //        }
 //        System.out.println(b);
-
+        int result2 = 0, result3 = 0;
+        List<String> pool = List.of("a", "b", "c");
+        for (int i = 0; i < 1000; i++) {
+            List<String> result = new ArrayList<>();
+            RandomSource random = RandomSource.create();
+            result.add(pool.get(random.nextInt(pool.size())));
+            if (random.nextLong() % 6 == 0) {
+                String element = pool.get(random.nextInt(pool.size()));
+                if (!result.contains(element))
+                    result.add(element);
+            }
+            if (random.nextLong() % 6 == 0) {
+                String element = pool.get(random.nextInt(pool.size()));
+                if (!result.contains(element))
+                    result.add(element);
+            }
+            if (result.size() == 2) result2++;
+            if (result.size() == 3) result3++;
+        }
+        System.out.println(result2);
+        System.out.println(result3);
     }
 }

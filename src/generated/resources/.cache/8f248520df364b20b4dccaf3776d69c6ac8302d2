@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-14T11:17:22.7736309	Item Models: soulland
+// 1.20.1	2025-04-15T09:50:07.9645014	Item Models: soulland
 7dc94a0d5fa22dade2ed594f793b54a24de28d3d assets/soulland/models/item/al_furnace_fuel_lv1.json
 0111fbbfb3d4ea3fb4818cfc0d0c29ea2df0dbcb assets/soulland/models/item/al_furnace_fuel_lv2.json
 79737029f74f61a371fdc68b5582565fb723d7b5 assets/soulland/models/item/feng_huang_ss_item.json
@@ -17,5 +17,6 @@ bdf436689fc111cfaf59a6689c87875edcc11fae assets/soulland/models/item/plant_02.js
 22f49e91e223ec132fe380d0cd68756e6db8848b assets/soulland/models/item/plant_04.json
 fa86dca1fe21179168547e0094fc24503c157a73 assets/soulland/models/item/plant_05.json
 2684dbf06dff770a044f3d4eaab537fb9803815e assets/soulland/models/item/raw_shen_silver_ingot.json
+a63e806ecd33034762c4bc56193c3575ee9270e5 assets/soulland/models/item/sausage_ss_item.json
 f42e166a29a137048d00695a2f18ddaf2e322285 assets/soulland/models/item/shen_silver_ingot.json
 2228897bf77db7c64f7e3aa44961cea71d75d165 assets/soulland/models/item/shen_silver_nugget.json

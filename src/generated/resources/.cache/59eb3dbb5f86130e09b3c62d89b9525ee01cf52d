@@ -1,7 +1,7 @@
-// 1.20.1	2025-04-14T20:56:29.4139958	Loot Tables
+// 1.20.1	2025-04-15T08:24:44.1250893	Loot Tables
 f269878e21e6ded1416ebc96eaf95360b942edcd data/soulland/loot_tables/blocks/alchemy_furnace.json
 e6770d1d94569e26c4386454f1a5dd54571da223 data/soulland/loot_tables/blocks/awaken_base.json
-27f929b1e02ea43e4e1e35082a46815c49160d30 data/soulland/loot_tables/blocks/crystal_ball.json
+a30cbf86bb97b970ded33a5e26ad17c1e544cdb8 data/soulland/loot_tables/blocks/crystal_ball.json
 ce9f4a1ee2fc1409f94371f05751b31a41391b94 data/soulland/loot_tables/blocks/deepslate_shen_silver_ore.json
 edc377e09aced034b8e534119a47d6d2bc34adc4 data/soulland/loot_tables/blocks/nether_shen_silver_ore.json
 89984364cc647743e0e58a1dee963b4851cdf416 data/soulland/loot_tables/blocks/shen_silver_block.json

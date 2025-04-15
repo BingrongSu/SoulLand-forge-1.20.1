@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.robert.soulland.SoulLand;
 import net.robert.soulland.item.custom.AlFurnaceFuel;
+import net.robert.soulland.item.custom.SoulRingItem;
 import net.robert.soulland.item.custom.SoulSpiritItem;
 import net.robert.soulland.item.custom.pill_recipes.IncreaseMaxSoulPowerPR;
 import net.robert.soulland.item.custom.pill_recipes.IncreaseSoulPowerPR;
@@ -64,6 +65,21 @@ public class ModItems {
             () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "fengHuang"));
     public static final RegistryObject<Item> LIU_LI_SS_ITEM = ITEMS.register("liu_li_ss_item",
             () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "liuLi"));
+    public static final RegistryObject<Item> SAUSAGE_SS_ITEM = ITEMS.register("sausage_ss_item",
+            () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "sausage"));
+
+    public static final RegistryObject<Item> SOUL_RING_TEN = ITEMS.register("soul_ring_ten",
+            () -> new SoulRingItem(new Item.Properties(), 30));
+    public static final RegistryObject<Item> SOUL_RING_HUNDRED = ITEMS.register("soul_ring_hud",
+            () -> new SoulRingItem(new Item.Properties(), 500));
+    public static final RegistryObject<Item> SOUL_RING_THOUSAND = ITEMS.register("soul_ring_thd",
+            () -> new SoulRingItem(new Item.Properties(), 4000));
+    public static final RegistryObject<Item> SOUL_RING_TEN_THOUSAND = ITEMS.register("soul_ring_ttd",
+            () -> new SoulRingItem(new Item.Properties(), 60000));
+    public static final RegistryObject<Item> SOUL_RING_HUNDRED_THOUSAND = ITEMS.register("soul_ring_htd",
+            () -> new SoulRingItem(new Item.Properties(), 550000));
+//    public static final RegistryObject<Item> SOUL_RING_MILLION = ITEMS.register("soul_ring_mil",
+//            () -> new SoulRingItem(new Item.Properties(), 9999999));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

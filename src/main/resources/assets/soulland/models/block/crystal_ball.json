@@ -3,7 +3,7 @@
 	"textures": {
 		"0": "soulland:block/crystal_ball/sjq001",
 		"1": "soulland:block/crystal_ball/sjq002",
-		"particle": "soulland:block/crystal_ball/sjq002"
+		"particle": "soulland:block/crystal_ball/sjq001"
 	},
 	"elements": [
 		{

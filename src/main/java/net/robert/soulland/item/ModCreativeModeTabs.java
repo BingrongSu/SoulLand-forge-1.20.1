@@ -44,6 +44,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.FENG_HUANG_SS_ITEM.get());
                         output.accept(ModItems.LIU_LI_SS_ITEM.get());
+                        output.accept(ModItems.SAUSAGE_SS_ITEM.get());
 
                         output.accept(ModBlocks.SHEN_SILVER_BLOCK.get());
                         output.accept(ModBlocks.SHEN_SILVER_ORE.get());
@@ -53,6 +54,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ALCHEMY_FURNACE.get());
                         output.accept(ModBlocks.AWAKEN_BASE.get());
                         output.accept(ModBlocks.CRYSTAL_BALL.get());
+
+                        output.accept(ModItems.SOUL_RING_TEN.get());
+                        output.accept(ModItems.SOUL_RING_HUNDRED.get());
+                        output.accept(ModItems.SOUL_RING_THOUSAND.get());
+                        output.accept(ModItems.SOUL_RING_TEN_THOUSAND.get());
+                        output.accept(ModItems.SOUL_RING_HUNDRED_THOUSAND.get());
+//                        output.accept(ModItems.SOUL_RING_MILLION.get());
                     }))
                     .build());
 

@@ -5,9 +5,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.robert.soulland.SoulLand;
+import net.robert.soulland.block.ModBlocks;
+import net.robert.soulland.block.entity.CrystalBallBlockEntity;
 import net.robert.soulland.stat.DataCache;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class IncreaseSoulPowerPill extends AbstractPillItem {
     public final Double amount;

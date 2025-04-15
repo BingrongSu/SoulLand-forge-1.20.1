@@ -31,7 +31,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.ALCHEMY_FURNACE.get());
         this.dropSelf(ModBlocks.AWAKEN_BASE.get());
-        this.dropSelf(ModBlocks.CRYSTAL_BALL.get());
+        this.dropWhenSilkTouch(ModBlocks.CRYSTAL_BALL.get());
     }
 
     @Override

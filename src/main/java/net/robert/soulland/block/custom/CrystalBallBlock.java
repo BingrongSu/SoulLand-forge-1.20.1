@@ -1,6 +1,7 @@
 package net.robert.soulland.block.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -18,9 +19,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
+import net.robert.soulland.block.ModBlocks;
 import net.robert.soulland.block.entity.AlchemyFurnaceBlockEntity;
 import net.robert.soulland.block.entity.CrystalBallBlockEntity;
 import net.robert.soulland.block.entity.ModBlockEntities;
+import net.robert.soulland.stat.DataCache;
 import org.jetbrains.annotations.Nullable;
 
 public class CrystalBallBlock extends BaseEntityBlock {
@@ -44,7 +47,15 @@ public class CrystalBallBlock extends BaseEntityBlock {
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()) {
-            //
+            CrystalBallBlockEntity blockEntity = (CrystalBallBlockEntity) pLevel.getBlockEntity(pPos);
+            assert blockEntity != null;
+            if (pLevel.getBlockState(pPos.below(1)).is(ModBlocks.AWAKEN_BASE.get()) && blockEntity.isBroken()
+                    || !pLevel.getBlockState(pPos.below(1)).is(ModBlocks.AWAKEN_BASE.get())) {
+                pLevel.destroyBlock(pPos, false);
+            }
+            if (pLevel.getBlockState(pPos).is(ModBlocks.CRYSTAL_BALL.get())) {
+                DataCache.globalData.awaken((ServerPlayer) pPlayer);
+            }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
