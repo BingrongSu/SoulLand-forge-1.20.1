@@ -49,7 +49,7 @@ public class PlayerRendererMixin {
             double pos, target = 0.5;
             long currentTick = pEntity.level().getGameTime();
             long showedTick = DataCache.getPlayerShowedTick(pEntity);
-            if (currentTick < showedTick)   showedTick = 0L;
+            if (currentTick < showedTick)   showedTick = currentTick;
             long timeTick = (long) (0.8 * 20L);                         // 单个魂环显示的时间，单位：tick
             double advTick = timeTick * 0.44d;                          // 下一个魂环显示的提前量，单位：tick
             double dTickTotal = currentTick - showedTick + pPartialTicks;
