@@ -134,9 +134,17 @@ public class SoulLandData extends SavedData {
         if (random.nextLong() % 6 == 1) appendSoulSpirit(player, soulSpiritPool.get(random.nextInt(soulSpiritPool.size())));
     }
 
-    // TODO 武魂觉醒相关：武魂觉醒事件;
+    public void addSoulRing(ServerPlayer player, double year) {
+        addSoulRing(player, year, getPlayerData(player).openedSoulSpirit);
+    }
+    public void addSoulRing(ServerPlayer player, double year, String soulSpirit) {
+        playersData.get(player.getUUID()).appendSoulRing(year, soulSpirit);
+        syncPlayerData(player);
+        setDirty();
+    }
+
     // TODO 魂力升级瓶颈设置（每十级）
-    // TODO 添加魂环Item，魂环显示及同步
+    // TODO 魂环显示及同步
     // TODO 吸收魂环后升级、增加更多魂力
     // TODO 觉醒武魂后获得成就：千分之一 -- 据说，不到千分之一的人觉醒武魂后拥有魂力；百年难遇 -- ；天选之子，
     // TODO 吸收魂环成就

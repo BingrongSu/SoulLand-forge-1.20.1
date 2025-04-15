@@ -38,6 +38,8 @@ public class ModClientEvents {
                             int nextIndex = soulSpirits.indexOf(DataCache.clientPlayerData.openedSoulSpirit) + 1;
                             DataCache.clientPlayerData.openedSoulSpirit = soulSpirits.get(nextIndex);
                         }
+                        assert Minecraft.getInstance().level != null;
+                        DataCache.clientPlayerData.showedTick = Minecraft.getInstance().level.getGameTime();
                         syncPlayerData();
                         Component soulSpiritName = Component.translatable("soulland.soul_spirit."+DataCache.clientPlayerData.openedSoulSpirit);
                         Component message = Component.translatable("soulland.message.switch_soul_spirit").append(soulSpiritName);

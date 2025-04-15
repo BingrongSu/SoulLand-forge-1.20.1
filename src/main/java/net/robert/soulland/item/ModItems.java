@@ -69,15 +69,15 @@ public class ModItems {
             () -> new SoulSpiritItem(new Item.Properties().food(ModFoods.SOUL_SPIRIT_ITEM), "sausage"));
 
     public static final RegistryObject<Item> SOUL_RING_TEN = ITEMS.register("soul_ring_ten",
-            () -> new SoulRingItem(new Item.Properties(), 30));
+            () -> new SoulRingItem(new Item.Properties().food(ModFoods.SOUL_RING_ITEM), 30));
     public static final RegistryObject<Item> SOUL_RING_HUNDRED = ITEMS.register("soul_ring_hud",
-            () -> new SoulRingItem(new Item.Properties(), 500));
+            () -> new SoulRingItem(new Item.Properties().food(ModFoods.SOUL_RING_ITEM), 500));
     public static final RegistryObject<Item> SOUL_RING_THOUSAND = ITEMS.register("soul_ring_thd",
-            () -> new SoulRingItem(new Item.Properties(), 4000));
+            () -> new SoulRingItem(new Item.Properties().food(ModFoods.SOUL_RING_ITEM), 4000));
     public static final RegistryObject<Item> SOUL_RING_TEN_THOUSAND = ITEMS.register("soul_ring_ttd",
-            () -> new SoulRingItem(new Item.Properties(), 60000));
+            () -> new SoulRingItem(new Item.Properties().food(ModFoods.SOUL_RING_ITEM), 60000));
     public static final RegistryObject<Item> SOUL_RING_HUNDRED_THOUSAND = ITEMS.register("soul_ring_htd",
-            () -> new SoulRingItem(new Item.Properties(), 550000));
+            () -> new SoulRingItem(new Item.Properties().food(ModFoods.SOUL_RING_ITEM), 550000));
 //    public static final RegistryObject<Item> SOUL_RING_MILLION = ITEMS.register("soul_ring_mil",
 //            () -> new SoulRingItem(new Item.Properties(), 9999999));
 

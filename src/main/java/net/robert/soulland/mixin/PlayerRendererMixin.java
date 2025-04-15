@@ -7,13 +7,20 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.network.PacketDistributor;
 import net.robert.soulland.item.ModItems;
+import net.robert.soulland.network.NetworkHandler;
+import net.robert.soulland.network.ShowedRingsSyncPacket;
+import net.robert.soulland.stat.DataCache;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.ArrayList;
 
 @Mixin(PlayerRenderer.class)
 public class PlayerRendererMixin {
@@ -26,7 +33,9 @@ public class PlayerRendererMixin {
 //        matrixStack.scale(5, 5, 5);
 //        itemRenderer.renderStatic(pEntity, new ItemStack(ModItems.SHEN_SILVER_INGOT.get()), ItemDisplayContext.HEAD, false, matrixStack,
 //                pBuffer, Minecraft.getInstance().level, pPackedLight, OverlayTexture.NO_OVERLAY, 0);
+        if (!DataCache.clientPlayersShowedRings.containsKey(pEntity.getUUID())) {
+            NetworkHandler.INSTANCE.sendToServer(new ShowedRingsSyncPacket(new ArrayList<>(), 0L, pEntity));
+        }
         matrixStack.popPose();
     }
-
 }

@@ -17,16 +17,14 @@ public class NetworkHandler {
     private static int packetId = 0;
 
     public static void register() {
-        // 注册服务端->客户端的数据包（ID 0）
         INSTANCE.registerMessage(packetId++, PlayerDataSyncPacket.class,
                 PlayerDataSyncPacket::encode,
                 PlayerDataSyncPacket::new,
                 PlayerDataSyncPacket::handle);
+        INSTANCE.registerMessage(packetId++, ShowedRingsSyncPacket.class,
+                ShowedRingsSyncPacket::encode,
+                ShowedRingsSyncPacket::new,
+                ShowedRingsSyncPacket::handle);
 
-        // 注册客户端->服务端的数据包（ID 1）
-//        INSTANCE.registerMessage(packetId++, ClientToServerPacket.class,
-//                ClientToServerPacket::encode,
-//                ClientToServerPacket::new,
-//                ClientToServerPacket::handle);
     }
 }

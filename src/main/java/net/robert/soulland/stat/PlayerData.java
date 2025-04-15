@@ -1,6 +1,7 @@
 package net.robert.soulland.stat;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.ServerLifecycleHooks;
@@ -15,6 +16,7 @@ public class PlayerData {
     public double spiritPower;
     public String openedSoulSpirit;
     public Map<String, List<Double>> soulRingYears;
+    public long showedTick;
 
     public PlayerData(UUID uuid) {
         playerUuid = uuid;
@@ -24,6 +26,7 @@ public class PlayerData {
         spiritPower = 0d;
         openedSoulSpirit = "null";
         soulRingYears = new HashMap<>();
+        showedTick = 0L;
     }
 
     public PlayerData(CompoundTag nbt) {
@@ -49,6 +52,7 @@ public class PlayerData {
                 }
                 soulRingYears.put(key, yearList);
             });
+        showedTick = nbt.getLong("showedTick");
     }
 
     public CompoundTag toNbtCompound() {
@@ -70,7 +74,7 @@ public class PlayerData {
                 yearsNbt.put(name, yearListNbt);
             });
         nbt.put("soulRingYears", yearsNbt);
-
+        nbt.putLong("showedTick", showedTick);
         return nbt;
     }
 
@@ -88,5 +92,21 @@ public class PlayerData {
     public void setMaxSoulPower(double maxSoulPower) {
         this.maxSoulPower = maxSoulPower;
         System.out.printf("Max Soul Power set to %.2f\n", this.maxSoulPower);
+    }
+
+    public void appendSoulRing(double years, String soulSpirit) {
+        if (soulSpirit.equals("null")) {
+            getPlayer().sendSystemMessage(Component.literal("Soul Spirit is not open or no soul spirit!"));
+            return;
+        }
+        soulRingYears.get(soulSpirit).add(years);
+    }
+
+    public List<Double> getShowingSoulRing() {
+        if (openedSoulSpirit.equals("null")) {
+            return new ArrayList<>();
+        } else {
+            return soulRingYears.get(openedSoulSpirit);
+        }
     }
 }
