@@ -2,6 +2,7 @@ package net.robert.soulland.event;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -10,6 +11,7 @@ import net.robert.soulland.SoulLand;
 import net.robert.soulland.key.ModKeyBinds;
 import net.robert.soulland.network.NetworkHandler;
 import net.robert.soulland.network.PlayerDataSyncPacket;
+import net.robert.soulland.network.ShowedRingsSyncPacket;
 import net.robert.soulland.stat.DataCache;
 
 import java.util.ArrayList;
@@ -52,5 +54,9 @@ public class ModClientEvents {
 
     public static void syncPlayerData() {
         NetworkHandler.INSTANCE.sendToServer(new PlayerDataSyncPacket(DataCache.clientPlayerData));
+        List<Double> years = DataCache.clientPlayerData.getShowingSoulRing();
+        long tick = DataCache.clientPlayerData.showedTick;
+        Player player = Minecraft.getInstance().player;
+        NetworkHandler.INSTANCE.sendToServer(new ShowedRingsSyncPacket(years, tick, player, false));
     }
 }

@@ -141,6 +141,10 @@ public class SoulLandData extends SavedData {
         playersData.get(player.getUUID()).appendSoulRing(year, soulSpirit);
         syncPlayerData(player);
         setDirty();
+        for (Player player1 : player.level().players()) {
+            DataCache.returnYearsData2Client(player1, player,
+                    getPlayerData(player).getShowingSoulRing(), getPlayerData(player).showedTick);
+        }
     }
 
     // TODO 魂力升级瓶颈设置（每十级）

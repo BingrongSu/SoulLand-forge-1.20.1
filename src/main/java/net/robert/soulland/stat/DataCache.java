@@ -30,9 +30,9 @@ public class DataCache {
         return clientPlayersShowedTicks.getOrDefault(player.getUUID(), 0L);
     }
 
-    public static void returnYearsData2Client(Player player, List<Double> years, long showedTick) {
+    public static void returnYearsData2Client(Player sendTo, Player player, List<Double> years, long showedTick) {
         NetworkHandler.INSTANCE.send(
-                PacketDistributor.PLAYER.with(() -> (ServerPlayer) player), new ShowedRingsSyncPacket(years, showedTick, player)
+                PacketDistributor.PLAYER.with(() -> (ServerPlayer) sendTo), new ShowedRingsSyncPacket(years, showedTick, player, false)
         );
     }
 }

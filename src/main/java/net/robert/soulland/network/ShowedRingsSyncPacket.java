@@ -1,5 +1,6 @@
 package net.robert.soulland.network;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
@@ -16,11 +17,13 @@ public class ShowedRingsSyncPacket {
     private Player player;
     private long showedTick = 0L;
     private List<Double> years = new ArrayList<>();
+    private boolean isRequest;
 
-    public ShowedRingsSyncPacket(List<Double> years, long showedTick, Player player) {
+    public ShowedRingsSyncPacket(List<Double> years, long showedTick, Player player, boolean isRequest) {
         this.years = years;
         this.player = player;
         this.showedTick = showedTick;
+        this.isRequest = isRequest;
     }
 
     public ShowedRingsSyncPacket(FriendlyByteBuf buf) {
@@ -32,6 +35,7 @@ public class ShowedRingsSyncPacket {
         if (server == null) return;
         player =  server.getPlayerList().getPlayer(buf.readUUID());
         showedTick = buf.readLong();
+        isRequest = buf.readBoolean();
     }
 
     public void encode(FriendlyByteBuf buf) {
@@ -39,6 +43,7 @@ public class ShowedRingsSyncPacket {
         years.forEach(buf::writeDouble);
         buf.writeUUID(player.getUUID());
         buf.writeLong(showedTick);
+        buf.writeBoolean(isRequest);
     }
 
     public static void handle(ShowedRingsSyncPacket packet, Supplier<NetworkEvent.Context> ctx) {
@@ -51,12 +56,24 @@ public class ShowedRingsSyncPacket {
                 System.out.println(DataCache.getPlayerShowedTick(packet.player));
                 System.out.println();
             } else if (ctx.get().getDirection() == NetworkDirection.PLAY_TO_SERVER) {
-                System.out.println("Server Received the request \n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-                List<Double> years = DataCache.globalData.getPlayerData(packet.player).getShowingSoulRing();
-                long tick = DataCache.globalData.getPlayerData(packet.player).showedTick;
-                DataCache.returnYearsData2Client(packet.player, years, tick);
-                System.out.println(years);
-                System.out.println(tick);
+                if (packet.isRequest) {
+                    System.out.println("Server Received the request \n~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    List<Double> years = DataCache.globalData.getPlayerData(packet.player).getShowingSoulRing();
+                    long tick = DataCache.globalData.getPlayerData(packet.player).showedTick;
+                    DataCache.returnYearsData2Client(ctx.get().getSender(), packet.player, years, tick);
+                    System.out.println(years);
+                    System.out.println(tick);
+                } else {
+                    System.out.println("Server Received the change \n~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+//                    assert Minecraft.getInstance().level != null;
+                    for (Player player1 : ctx.get().getSender().level().players()) {
+                        DataCache.returnYearsData2Client(player1, packet.player, packet.years, packet.showedTick);
+                    }
+                    System.out.println(packet.player);
+                    System.out.println(packet.years);
+                    System.out.println(packet.showedTick);
+                }
             }
         });
         ctx.get().setPacketHandled(true);
