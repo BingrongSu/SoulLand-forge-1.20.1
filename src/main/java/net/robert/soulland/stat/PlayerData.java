@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.ServerLifecycleHooks;
+import net.robert.soulland.helper.MathHelper;
 
 import java.util.*;
 
@@ -108,5 +109,9 @@ public class PlayerData {
         } else {
             return soulRingYears.get(openedSoulSpirit);
         }
+    }
+
+    public boolean getStuck() {
+        return MathHelper.isGetStuck(maxSoulPower);
     }
 }

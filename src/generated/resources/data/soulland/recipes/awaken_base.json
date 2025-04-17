@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "+": {
+      "item": "minecraft:stone"
+    },
+    "-": {
+      "item": "minecraft:redstone_block"
+    },
+    ".": {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  },
+  "pattern": [
+    "...",
+    "#-#",
+    "+#+"
+  ],
+  "result": {
+    "item": "soulland:awaken_base"
+  },
+  "show_notification": true
+}

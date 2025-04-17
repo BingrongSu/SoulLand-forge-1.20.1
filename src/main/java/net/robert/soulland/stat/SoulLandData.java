@@ -79,15 +79,21 @@ public class SoulLandData extends SavedData {
         setDirty();
     }
 
-    public void addMaxSoulPower(Player player, double amount) {
-        addMaxSoulPower(player.getUUID(), amount);
+    public void addMaxSoulPower(Player player, double amount, boolean initial) {
+        addMaxSoulPower(player.getUUID(), amount, initial);
     }
 
-    public void addMaxSoulPower(UUID uuid, double amount) {
+    public void addMaxSoulPower(UUID uuid, double amount, boolean initial) {
+        if (getPlayerData(uuid).maxSoulPower <= 0 && !initial) {
+            return;
+        }
         System.out.printf("Add Max Soul Power by %.2f.\n", amount);
-        double n = getPlayerData(uuid).maxSoulPower + amount;
+        double n = MathHelper.addMaxSoulPower(getPlayerData(uuid).maxSoulPower, amount);
         playersData.get(uuid).setMaxSoulPower(n);
         PlayerData playerData = playersData.get(uuid);
+        if (n == getPlayerData(uuid).maxSoulPower) {
+            playerData.getPlayer().sendSystemMessage(Component.literal("Can't increase, please absorb a ring!"));
+        }
         syncPlayerData(playerData.getPlayer(), playerData);
         playerData.getPlayer().sendSystemMessage(Component.literal("Current max soul power: %.2f".formatted(n)));
         setDirty();
@@ -123,7 +129,7 @@ public class SoulLandData extends SavedData {
         assert Minecraft.getInstance().level != null;
         int initialLevel = MathHelper.getInitialLevel(Minecraft.getInstance().level.getGameTime());
         double initialSoulPower = MathHelper.level2SoulPower(initialLevel);
-        addMaxSoulPower(player, initialSoulPower);
+        addMaxSoulPower(player, initialSoulPower, true);
         addSoulPower(player, initialSoulPower);
         player.sendSystemMessage(Component.literal("Awaken!"));
         player.sendSystemMessage(Component.literal("Initial soul power level: " + initialLevel));
@@ -148,7 +154,6 @@ public class SoulLandData extends SavedData {
     }
 
     // TODO 魂力升级瓶颈设置（每十级）
-    // TODO 魂环显示及同步
     // TODO 吸收魂环后升级、增加更多魂力
     // TODO 觉醒武魂后获得成就：千分之一 -- 据说，不到千分之一的人觉醒武魂后拥有魂力；百年难遇 -- ；天选之子，
     // TODO 吸收魂环成就

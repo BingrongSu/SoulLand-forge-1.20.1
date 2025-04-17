@@ -3,6 +3,7 @@ package net.robert.soulland.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -44,6 +45,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('+', Blocks.COPPER_BLOCK)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                 .save(consumer, new ResourceLocation(SoulLand.MOD_ID, getSimpleRecipeName(ModBlocks.ALCHEMY_FURNACE.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AWAKEN_BASE.get())
+                .pattern("...")
+                .pattern("#-#")
+                .pattern("+#+")
+                .define('.', Blocks.COBBLED_DEEPSLATE)
+                .define('-', Blocks.REDSTONE_BLOCK)
+                .define('+', Blocks.STONE)
+                .define('#', ItemTags.PLANKS)
+                .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE))
+                .save(consumer, new ResourceLocation(SoulLand.MOD_ID, getSimpleRecipeName(ModBlocks.AWAKEN_BASE.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.CRYSTAL_BALL.get())
+                .pattern(" . ")
+                .pattern(".-.")
+                .pattern(" . ")
+                .define('.', Blocks.LIGHT_BLUE_STAINED_GLASS)
+                .define('-', Blocks.LAPIS_BLOCK)
+                .unlockedBy(getHasName(Items.SAND), has(Items.SAND))
+                .save(consumer, new ResourceLocation(SoulLand.MOD_ID, getSimpleRecipeName(ModBlocks.CRYSTAL_BALL.get())));
     }
 
 

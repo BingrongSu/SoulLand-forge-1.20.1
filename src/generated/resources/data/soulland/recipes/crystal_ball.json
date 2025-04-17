@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "-": {
+      "item": "minecraft:lapis_block"
+    },
+    ".": {
+      "item": "minecraft:light_blue_stained_glass"
+    }
+  },
+  "pattern": [
+    " . ",
+    ".-.",
+    " . "
+  ],
+  "result": {
+    "item": "soulland:crystal_ball"
+  },
+  "show_notification": true
+}

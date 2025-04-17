@@ -3,11 +3,13 @@ package net.robert.soulland.helper;
 import net.robert.soulland.SoulLand;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class MathHelper {
     public static final List<Double> list = new ArrayList<>();
+    public static List<Double> stuckList = new ArrayList<>();
 
     public static int getAFMaxProgress(int pillLevel) {
         return pillLevel * 200;
@@ -107,5 +109,18 @@ public class MathHelper {
             list.add(level2SoulPower(i + 1));
         }
         list.add(30000000d);     // 100级需要的魂力：3000万
+        for (int i = 0; i < 10; i++) {
+            stuckList.add(list.get(10 * i + 9) - 1);
+        }
+    }
+
+    public static boolean isGetStuck(double maxSoulPower) {
+        return stuckList.contains(maxSoulPower);
+    }
+
+    public static double addMaxSoulPower(double initial, double increment) {
+        int index = Arrays.binarySearch(stuckList.toArray(), initial);
+        if (index >= 0) return initial;
+        return Math.min(increment, stuckList.get(index + 1) - initial) + initial;
     }
 }

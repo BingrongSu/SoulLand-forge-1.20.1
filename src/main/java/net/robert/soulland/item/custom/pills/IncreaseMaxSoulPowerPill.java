@@ -19,7 +19,7 @@ public class IncreaseMaxSoulPowerPill extends AbstractPillItem {
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack pStack, @NotNull Level pLevel, @NotNull LivingEntity pLivingEntity) {
         if (!pLevel.isClientSide()) {
             System.out.printf("Consumed Increase-Max-Soul-Power Pill. Level %d.\n", getLevel());
-            DataCache.globalData.addMaxSoulPower((Player) pLivingEntity, amount);
+            DataCache.globalData.addMaxSoulPower((Player) pLivingEntity, amount, false);
         }
         return super.finishUsingItem(pStack, pLevel, pLivingEntity);
     }
